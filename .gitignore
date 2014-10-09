@@ -1,0 +1,6 @@
+# Created by .gitignore support plugin (hsz.mobi)
+### Magento template
+.modgit/
+media/catalog/product/cache/
+var/
+.idea
