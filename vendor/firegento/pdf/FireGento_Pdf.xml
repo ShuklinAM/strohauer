@@ -1,0 +1,104 @@
+<_>
+   <form_key>xqBmbFZHG5fYPXdK</form_key>
+   <name>FireGento_Pdf</name>
+   <channel>community</channel>
+   <version_ids>
+      <version_ids>2</version_ids>
+   </version_ids>
+   <summary>FireGento PDF overwrites standard PDF layouts for invoices, shipments and creditmemos.</summary>
+   <description>FireGento PDF overwrites standard PDF layouts for invoices, shipments and creditmemos. Anyway, you can still use the standard Magento layout, because the extension is highly configurable.</description>
+   <license>OSL 3.0</license>
+   <license_uri/>
+   <version>1.2.0</version>
+   <stability>stable</stability>
+   <notes>- [FEATURE] 1.8 compatibility
+- [FEATURE] added possibility to print order ID barcodes on shipment PDFs
+- [FEATURE] added possibility to print shipment type on shipment PDFs
+- [FEATURE] added universal event, so that developers can add custom stuff anywhere they want via observers
+- [FEATURE] added possibility to use a full-width logo
+- [FEATURE] configuration option whether to print the customer number
+- [FEATURE] possibility to add invoice comments on invoice PDF
+- [FEATURE] dutch translation
+- [BUGFIX] fixed error when there is no country in the imprint
+- [BUGFIX] print shipping address instead of invoice address on shipment PDF
+- [MISC] respect FireGento coding guidelines</notes>
+   <authors>
+      <name>
+         <name>FireGento Team</name>
+      </name>
+      <user>
+         <user>firegento</user>
+      </user>
+      <email>
+         <email>team@firegento.com</email>
+      </email>
+   </authors>
+   <depends_php_min>5.2.0</depends_php_min>
+   <depends_php_max>6.0.0</depends_php_max>
+   <depends>
+      <package>
+         <name>
+            <name/>
+         </name>
+         <channel>
+            <channel/>
+         </channel>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+         <files>
+            <files>            </files>
+         </files>
+      </package>
+      <extension>
+         <name>
+            <name>Core</name>
+         </name>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+      </extension>
+   </depends>
+   <contents>
+      <target>
+         <target>magelocal</target>
+         <target>magecommunity</target>
+         <target>mageetc</target>
+         <target>magelocale</target>
+      </target>
+      <path>
+         <path/>
+         <path>FireGento/Pdf</path>
+         <path>modules/FireGento_Pdf.xml</path>
+         <path/>
+      </path>
+      <type>
+         <type>file</type>
+         <type>dir</type>
+         <type>file</type>
+         <type>dir</type>
+      </type>
+      <include>
+         <include/>
+         <include/>
+         <include/>
+         <include>#FireGento_Pdf.csv#</include>
+      </include>
+      <ignore>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+      </ignore>
+   </contents>
+   <page>1</page>
+   <limit>200</limit>
+   <folder/>
+   <package/>
+</_>
