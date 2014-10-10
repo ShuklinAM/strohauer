@@ -1,0 +1,675 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<codevog translate="label" module="templatesettings">
+			<label>Module template</label>
+			<sort_order>205</sort_order>
+		</codevog>
+	</tabs>
+	<sections>
+		<templatesettings translate="label" module="templatesettings">
+			<label>Cake Configurator Options</label>
+			<tab>codevog</tab>
+			<sort_order>10</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<!--<templatesettings_appearance translate="label">-->
+					<!--<label>Appearance</label>-->
+					<!--<frontend_type>text</frontend_type>-->
+					<!--<sort_order>10</sort_order>-->
+					<!--<show_in_default>1</show_in_default>-->
+					<!--<show_in_website>1</show_in_website>-->
+					<!--<show_in_store>1</show_in_store>-->
+					<!--<fields>-->
+						<!--<width translate="label comment">-->
+							<!--<label>Width: </label>-->
+							<!--<frontend_type>radios</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_width</frontend_model>-->
+							<!--<source_model>templatesettings/config_width</source_model>-->
+							<!--<sort_order>10</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</width>-->
+						<!--<style translate="label comment">-->
+							<!--<label>Style: </label>-->
+							<!--<frontend_type>radios</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_style</frontend_model>-->
+							<!--<source_model>templatesettings/config_style</source_model>-->
+							<!--<sort_order>20</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</style>-->
+						<!--<slider translate="label comment">-->
+							<!--<label>Slider: </label>-->
+							<!--<frontend_type>radios</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_slider</frontend_model>-->
+							<!--<source_model>templatesettings/config_slider</source_model>-->
+							<!--<sort_order>25</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</slider>-->
+						<!--<footer translate="label comment">-->
+							<!--<label>Footer: </label>-->
+							<!--<frontend_type>radios</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_footer</frontend_model>-->
+							<!--<source_model>templatesettings/config_footer</source_model>-->
+							<!--<sort_order>30</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</footer>-->
+						<!--<font translate="label comment">-->
+							<!--<label>Font: </label>-->
+							<!--<frontend_type>select</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_font</frontend_model>-->
+							<!--<source_model>templatesettings/config_font</source_model>-->
+							<!--<sort_order>40</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</font>-->
+						<!--<color translate="label comment">-->
+							<!--<label>Theme Color: </label>-->
+							<!--<comment>This color will be used for buttons and backgrounds</comment>-->
+							<!--<frontend_type>text</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_color</frontend_model>-->
+							<!--<sort_order>50</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</color>-->
+                        <!--<header_bg_color translate="label comment">-->
+							<!--<label>Header BG Color: </label>-->
+							<!--<comment>This color will be used for header background</comment>-->
+							<!--<frontend_type>text</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_color</frontend_model>-->
+							<!--<sort_order>60</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</header_bg_color>-->
+                        <!--<header_fg_color translate="label comment">-->
+							<!--<label>Header Text Color: </label>-->
+							<!--<comment>This color will be used header text/links</comment>-->
+							<!--<frontend_type>text</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_color</frontend_model>-->
+							<!--<sort_order>70</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</header_fg_color>-->
+                        <!--<footer_bg_color translate="label comment">-->
+							<!--<label>Footer BG Color: </label>-->
+							<!--<comment>This color will be used for footer background</comment>-->
+							<!--<frontend_type>text</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_color</frontend_model>-->
+							<!--<sort_order>80</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</footer_bg_color>-->
+                        <!--<footer_fg_color translate="label comment">-->
+							<!--<label>Footer Text Color: </label>-->
+							<!--<comment>This color will be used footer text/links</comment>-->
+							<!--<frontend_type>text</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_color</frontend_model>-->
+							<!--<sort_order>90</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</footer_fg_color>-->
+                        <!--<content_bg_color translate="label comment">-->
+							<!--<label>Content bg Color: </label>-->
+							<!--<comment>This color will be used for content bg</comment>-->
+							<!--<frontend_type>text</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_color</frontend_model>-->
+							<!--<sort_order>100</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</content_bg_color>-->
+					<!--</fields>-->
+				<!--</templatesettings_appearance>-->
+				<!--<templatesettings_header translate="label">-->
+                    <!--<label>Header</label>-->
+                    <!--<frontend_type>text</frontend_type>-->
+                    <!--<sort_order>20</sort_order>-->
+                    <!--<show_in_default>1</show_in_default>-->
+                    <!--<show_in_website>1</show_in_website>-->
+                    <!--<show_in_store>1</show_in_store>-->
+                    <!--<fields>-->
+                        <!--<navigation_home translate="label">-->
+                            <!--<label>Home Link in Navigation</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>10</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</navigation_home>-->
+						<!--<top_signup translate="label">-->
+                            <!--<label>Show Sign Up Link</label>-->
+							<!--<comment>Link in the Top Links (top right corner).</comment>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>30</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</top_signup>-->
+                        <!--<top_ajaxlogin translate="label">-->
+                            <!--<label>Ajax Login Link</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>33</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</top_ajaxlogin>-->
+                        <!--<top_ajaxsignup translate="label">-->
+                            <!--<label>Ajax Sign Up Link</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>36</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</top_ajaxsignup>-->
+						<!--<top_custom_link translate="label">-->
+                            <!--<label>Custom Link in Top links</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>60</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</top_custom_link>-->
+						<!--<top_custom_link_path translate="label">-->
+                            <!--<label>Custom Link Path</label>-->
+							<!--<comment>No leading or trailing slashes.</comment>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <!--<sort_order>70</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</top_custom_link_path>-->
+						<!--<top_custom_link_anchor translate="label">-->
+                            <!--<label>Custom Link Anchor Text</label>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <!--<sort_order>80</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</top_custom_link_anchor>-->
+						<!--<top_custom_link_title translate="label">-->
+                            <!--<label>Custom Link Title Text</label>-->
+							<!--<comment>Additional text displayed on hover.</comment>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <!--<sort_order>90</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</top_custom_link_title>-->
+                    <!--</fields>-->
+                <!--</templatesettings_header>-->
+				<!--<templatesettings_navigation translate="label">-->
+					<!--<label>Navigation</label>-->
+					<!--<frontend_type>text</frontend_type>-->
+					<!--<sort_order>30</sort_order>-->
+					<!--<show_in_default>1</show_in_default>-->
+					<!--<show_in_website>1</show_in_website>-->
+					<!--<show_in_store>1</show_in_store>-->
+					<!--<fields>-->
+						<!--<show_description translate="label comment">-->
+							<!--<label>Show Top Category description in dropdown: </label>-->
+							<!--<frontend_type>select</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_showdescription</frontend_model>-->
+							<!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+							<!--<sort_order>10</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</show_description>-->
+						<!--&lt;!&ndash;<columns_num translate="label comment">-->
+							<!--<label>Columns Number: </label>-->
+							<!--<comment>Will be used if top category has no description or show description option turned off</comment>-->
+							<!--<frontend_type>text</frontend_type>-->
+							<!--<sort_order>20</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</columns_num>&ndash;&gt;-->
+						<!--<show_learn_more translate="label comment">-->
+							<!--<label><![CDATA[Show <b>"Learn more"</b> button under description:]]></label>-->
+							<!--<frontend_type>select</frontend_type>-->
+							<!--<frontend_model>templatesettings/adminhtml_system_config_form_field_showlearnmore</frontend_model>-->
+							<!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+							<!--<sort_order>30</sort_order>-->
+							<!--<show_in_default>1</show_in_default>-->
+							<!--<show_in_website>1</show_in_website>-->
+							<!--<show_in_store>1</show_in_store>-->
+						<!--</show_learn_more>-->
+					<!--</fields>-->
+				<!--</templatesettings_navigation>-->
+				<!--<templatesettings_labels translate="label">-->
+                    <!--<label>Product Labels</label>-->
+                    <!--<frontend_type>text</frontend_type>-->
+                    <!--<sort_order>40</sort_order>-->
+                    <!--<show_in_default>1</show_in_default>-->
+                    <!--<show_in_website>1</show_in_website>-->
+                    <!--<show_in_store>1</show_in_store>-->
+                    <!--<fields>-->
+                        <!--<new_label translate="label">-->
+                            <!--<label>Show "New" label</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>10</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</new_label>-->
+	                    <!--<new_label_position translate="label">-->
+                            <!--<label>"New" label position</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>templatesettings/config_position</source_model>-->
+                            <!--<sort_order>20</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</new_label_position>-->
+	                    <!--<sale_label translate="label">-->
+                            <!--<label>Show "Sale" label</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>30</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</sale_label>-->
+	                    <!--<sale_label_position translate="label">-->
+                            <!--<label>"Sale" label position</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>templatesettings/config_position</source_model>-->
+                            <!--<sort_order>40</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</sale_label_position>-->
+                    <!--</fields>-->
+                <!--</templatesettings_labels>-->
+<!--&lt;!&ndash; news &ndash;&gt;-->
+
+                <!--<templatesettings_news translate="label">-->
+                    <!--<label>News</label>-->
+                    <!--<frontend_type>text</frontend_type>-->
+                    <!--<sort_order>45</sort_order>-->
+                    <!--<show_in_default>1</show_in_default>-->
+                    <!--<show_in_website>1</show_in_website>-->
+                    <!--<show_in_store>1</show_in_store>-->
+                    <!--<fields>-->
+                        <!--<news_active translate="label">-->
+                            <!--<label>Active news</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>10</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_active>-->
+                        <!--<news_template translate="label">-->
+                            <!--<label>Choose template for news list</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>news/template</source_model>-->
+                            <!--<sort_order>15</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_template>-->
+                        <!--<news_templateview translate="label">-->
+                            <!--<label>Choose template for view news</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>news/template</source_model>-->
+                            <!--<sort_order>18</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_templateview>-->
+                        <!--<news_top translate="label">-->
+                            <!--<label>Show in Top menu</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>20</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_top>-->
+                        <!--<news_home translate="label">-->
+                            <!--<label>Show on home page</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>30</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_home>-->
+                        <!--<news_homenum translate="label">-->
+                            <!--<label>Number of news on home page</label>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <!--<sort_order>40</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_homenum>-->
+                        <!--<news_homeimage translate="label">-->
+                            <!--<label>Show images of news on home page</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>50</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_homeimage>-->
+                        <!--<news_left translate="label">-->
+                            <!--<label>Show in left column</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>60</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_left>-->
+                        <!--<news_leftnum translate="label">-->
+                            <!--<label>Number of news in left column</label>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <!--<sort_order>70</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_leftnum>-->
+                        <!--<news_leftimage translate="label">-->
+                            <!--<label>Show images of news in left column</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>80</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_leftimage>-->
+                        <!--<news_right translate="label">-->
+                            <!--<label>Show in right column</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>90</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_right>-->
+                        <!--<news_rightnum translate="label">-->
+                            <!--<label>Number of news in right column</label>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <!--<sort_order>100</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_rightnum>-->
+                        <!--<news_rightimage translate="label">-->
+                            <!--<label>Show images of news in right column</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>110</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</news_rightimage>-->
+                    <!--</fields>-->
+                <!--</templatesettings_news>-->
+                <!--&lt;!&ndash; end news &ndash;&gt;-->
+                <!--<templatesettings_options translate="label">-->
+                <!--<label>Options</label>-->
+                <!--<frontend_type>text</frontend_type>-->
+                <!--<sort_order>110</sort_order>-->
+                <!--<show_in_default>1</show_in_default>-->
+                <!--<show_in_website>1</show_in_website>-->
+                <!--<show_in_store>1</show_in_store>-->
+                    <!--<fields>-->
+                        <!--<options_ajaxcart translate="label">-->
+                            <!--<label>Ajax cart</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>10</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</options_ajaxcart>-->
+                    <!--</fields>-->
+                    <!--<fields>-->
+                        <!--<options_imagebuilder translate="label">-->
+                            <!--<label>Imagebuilder active</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>20</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</options_imagebuilder>-->
+                    <!--</fields>-->
+                <!--</templatesettings_options>-->
+                <!--<templatesettings_imagebuilder_image translate="label">-->
+                <!--<label>imagebuilder Image Options</label>-->
+                <!--<frontend_type>text</frontend_type>-->
+                <!--<sort_order>145</sort_order>-->
+                <!--<show_in_default>1</show_in_default>-->
+                <!--<show_in_website>1</show_in_website>-->
+                <!--<show_in_store>1</show_in_store>-->
+                <!--<fields>-->
+                <!--<scale_step translate="label">-->
+                    <!--<label>Choose the minimum step of scaling</label>-->
+                    <!--<frontend_type>select</frontend_type>-->
+                    <!--<source_model>imagebuilder/config_scale</source_model>-->
+                    <!--<sort_order>10</sort_order>-->
+                    <!--<show_in_default>1</show_in_default>-->
+                    <!--<show_in_website>1</show_in_website>-->
+                    <!--<show_in_store>1</show_in_store>-->
+                <!--</scale_step>-->
+                <!--<move_step translate="label">-->
+                    <!--<label>Choose the minimum step of moving</label>-->
+                    <!--<frontend_type>select</frontend_type>-->
+                    <!--<source_model>imagebuilder/config_move</source_model>-->
+                    <!--<sort_order>20</sort_order>-->
+                    <!--<show_in_default>1</show_in_default>-->
+                    <!--<show_in_website>1</show_in_website>-->
+                    <!--<show_in_store>1</show_in_store>-->
+                <!--</move_step>-->
+                <!--<stretch_step translate="label">-->
+                    <!--<label>Choose the minimum step of stretching</label>-->
+                    <!--<frontend_type>select</frontend_type>-->
+                    <!--<source_model>imagebuilder/config_stretch</source_model>-->
+                    <!--<sort_order>30</sort_order>-->
+                    <!--<show_in_default>1</show_in_default>-->
+                    <!--<show_in_website>1</show_in_website>-->
+                    <!--<show_in_store>1</show_in_store>-->
+                <!--</stretch_step>-->
+                <!--<rotate_step translate="label">-->
+                    <!--<label>Choose the minimum step of rotating</label>-->
+                    <!--<frontend_type>select</frontend_type>-->
+                    <!--<source_model>imagebuilder/config_rotate</source_model>-->
+                    <!--<sort_order>40</sort_order>-->
+                    <!--<show_in_default>1</show_in_default>-->
+                    <!--<show_in_website>1</show_in_website>-->
+                    <!--<show_in_store>1</show_in_store>-->
+                <!--</rotate_step>-->
+                <!--</fields>-->
+                <!--</templatesettings_imagebuilder_image>-->
+                <!--<templatesettings_imagebuilder_text translate="label">-->
+                    <!--<label>imagebuilder Text Options</label>-->
+                    <!--<frontend_type>text</frontend_type>-->
+                    <!--<sort_order>165</sort_order>-->
+                    <!--<show_in_default>1</show_in_default>-->
+                    <!--<show_in_website>1</show_in_website>-->
+                    <!--<show_in_store>1</show_in_store>-->
+                    <!--<fields>-->
+                        <!--<scale_step translate="label">-->
+                            <!--<label>Choose the minimum step of scaling</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>imagebuilder/config_scale</source_model>-->
+                            <!--<sort_order>10</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</scale_step>-->
+                        <!--<move_step translate="label">-->
+                            <!--<label>Choose the minimum step of moving</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>imagebuilder/config_move</source_model>-->
+                            <!--<sort_order>20</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</move_step>-->
+                        <!--<stretch_step translate="label">-->
+                            <!--<label>Choose the minimum step of stretching</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>imagebuilder/config_stretch</source_model>-->
+                            <!--<sort_order>30</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</stretch_step>-->
+                        <!--<rotate_step translate="label">-->
+                            <!--<label>Choose the minimum step of rotating</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>imagebuilder/config_rotate</source_model>-->
+                            <!--<sort_order>40</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</rotate_step>-->
+                    <!--</fields>-->
+                <!--</templatesettings_imagebuilder_text>-->
+                <htmlcanvas_config>
+                    <label>Cake Configurator Config</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled>
+                            <label>Active</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <enable_user_uploads>
+                            <label>Enable User Uploads</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_user_uploads>
+                        <max_uploads>
+                            <label>Max User Uploads</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </max_uploads>
+                        <enable_insert_templates>
+                            <label>Enable Insert Templates</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_insert_templates>
+                        <max_templates>
+                            <label>Max Templates In Form</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </max_templates>
+                        <enable_insert_cliparts>
+                            <label>Enable Insert Cliparts</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_insert_cliparts>
+                        <enable_insert_text>
+                            <label>Enable Insert Text</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_insert_text>
+                        <enable_scale>
+                            <label>Enable Scale</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_scale>
+                        <enable_rotate>
+                            <label>Enable Rotate</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_rotate>
+                        <enable_centered>
+                            <label>Enable Centered</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_centered>
+                        <enable_on_top_bottom>
+                            <label>Enable On Top/Bottom</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_on_top_bottom>
+                        <enable_remove_button>
+                            <label>Enable "Remove" Button</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_remove_button>
+                    </fields>
+                </htmlcanvas_config>
+			</groups>
+		</templatesettings>
+	</sections>
+</config>
+
+

@@ -1,0 +1,82 @@
+<?php if(Mage::helper('codevog_htmlcanvas')->canShow()):?>
+
+    <?php
+        $canvasHelper = Mage::helper('codevog_htmlcanvas');
+    if(!$canvasHelper->isLessIE9()):
+        $item = $canvasHelper->getCurrentItem();
+        if($item->getId()):
+            $build = $canvasHelper->getBuildByIp($item->getId());
+    ?>
+            <div id="canvas-state-form">
+                <?php if($build):?>
+                    <div class="design_img">
+                        <a href="<?php echo $canvasHelper->getBuildImageUrl().$build->getImage()?>" id="canvas-image-preview">
+                            <img style="width: 252px;" src="<?php echo $canvasHelper->getBuildImageUrl().$build->getImage()?>"/>
+                        </a>
+                        <a class="bt_designer" href="<?php echo Mage::getBaseUrl()?>imagecreate/show?id=<?php echo $item->getId()?>">
+                            <?php echo $this->__('Update image')?>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="bt_designer" href="<?php echo Mage::getBaseUrl()?>imagecreate/show?id=<?php echo $item->getId()?>">
+                            <?php echo $this->__('Update image')?>
+                        </a>
+                        <a class="bt_designer" href="<?php echo Mage::getBaseUrl()?>imagecreate/show/remove?id=<?php echo $build->getId()?>&item_id=<?php echo $item->getId();?>" onclick="if(confirm('<?php echo $this->__('Do you want to remove your image?')?>')){return true;}else{return false;};">
+                            <?php echo $this->__('Remove Image')?>
+                        </a>
+                    </div>
+                    <div>
+                        <input readonly="readonly" type="text" placeholder="<?php echo $this->__('Url')?>:" value="<?php echo $canvasHelper->getBuildImageUrl().$build->getImage()?>">
+                    </div>
+                    <div>
+                        <?php $sizeBuild = Mage::getModel('htmlcanvas/sizes')->load($build->getSizeId())?>
+                        <input readonly="readonly" type="text" placeholder="<?php echo $this->__('Size');?>:" value=" <?php echo $sizeBuild->getName()?>">
+                    </div>
+                    <div>
+                        <input readonly="readonly" type="text" placeholder="<?php echo $this->__('Size Price');?>:" value="<?php echo $canvasHelper->convertPrice($sizeBuild->getPriceRule()).' '.$canvasHelper->getCurrencySymbol();?>">
+                    </div>
+
+                    <div class="design_text">
+                        <?php $textArray = $canvasHelper->getTexts($build->getJsonOptions());?>
+                        <textarea  readonly="readonly" placeholder="<?php echo $this->__('Text Strings')?>:">
+                             <?php if(count($textArray)):?>
+                                <?php foreach($textArray as $string):?>
+                                    <?php echo $string?>
+                                <?php endforeach;?>
+                            <?php endif;?>
+                        </textarea>
+                    </div>
+
+                    <script>
+                       // var $ = jQuery.noConflict();
+                        jQuery("#canvas-image-preview").fancybox();
+                    </script>
+                <?php else:?>
+                    <a class="new_designer_img" href="<?php echo Mage::getBaseUrl()?>imagecreate/show?id=<?php echo $item->getId()?>">
+                        <?php echo $this->__('Create image')?>
+                    </a>
+                    <div>
+                        <?php echo $canvasHelper->getAbout('about_message');?>
+                    </div>
+                <?php endif;?>
+            </div>
+            <div style="display: none;" id="browserMessage">
+                <?php echo $canvasHelper->getAbout('browser_message ');?>
+            </div>
+
+            <!--[if lte IE 8 ]>
+               <script type="text/javascript">
+
+                    jQuery("#canvas-state-form").html('').hide();
+                    jQuery("#browserMessage").show();
+
+               </script>
+            <![endif]-->
+
+          <?php else:?>
+                <script>setLocation('<?php echo Mage::getBaseUrl()?>error404');</script>
+          <?php endif;?>
+    <?php else:?>
+        <?php echo $canvasHelper->getAbout('browser_message ');?>
+    <?php endif;?>
+<?php endif;?>

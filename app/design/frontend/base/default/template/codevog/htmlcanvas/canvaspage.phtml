@@ -1,0 +1,267 @@
+<?php if(Mage::helper('codevog_htmlcanvas')->canShow() && !Mage::helper('codevog_htmlcanvas')->isLessIE9()):?>
+<?php
+    $canvasHelper = Mage::helper('codevog_htmlcanvas');
+    $item = $canvasHelper->getCurrentItem();
+    if($item->getId()):
+        $build = $canvasHelper->getBuildByIp($item->getId());
+        ?>
+
+    <script>
+        var baseUrl = '<?php echo Mage::getBaseUrl()?>';
+    </script>
+    <!--[if lte IE 8 ]>
+        <script>
+            setLocation(baseUrl + 'error404');
+        </script>
+    <![endif]-->
+
+    <div class="breadcrumbs">
+        <?php echo $this->__('Cake Configurator')?>:
+    </div>
+
+<div class="wrap_canvas">
+
+
+    <div id="leftbar-htmlcanvas">
+
+        <div id="canvas-size-block" class="vinous">
+            <h4><?php echo $this->__('Size')?>:</h4>
+            <select id="canvas-size" onchange="setCanvasSize();">
+                <?php $canvasSizes = $canvasHelper->getCanvasSizes();?>
+                <?php foreach($canvasSizes as $canvasSize):?>
+                    <option value="<?php echo $canvasSize->getId()?>">
+                        <?php echo $canvasSize->getName();?>
+                    </option>
+                <?php endforeach;?>
+            </select>
+            <?php foreach($canvasSizes as $canvasSize):?>
+                <input id="canvas-size-<?php echo $canvasSize->getId()?>" type="hidden" value="<?php echo $canvasHelper->convertCmPxCm($canvasSize->getWorkspaceWidth())?>;<?php echo $canvasHelper->convertCmPxCm($canvasSize->getWorkspaceHeight())?>;<?php echo $canvasHelper->convertCmPxCm($canvasSize->getWidth())?>;<?php echo $canvasHelper->convertCmPxCm($canvasSize->getHeight())?>;<?php echo $canvasSize->getShape();?>;<?php echo $canvasSize->getId()?>"/>
+            <?php endforeach;?>
+            <div class="clear"></div>
+        </div>
+        <div id="color-picker-block" class="vinous">
+            <h4><?php echo $this->__('Color')?>:</h4>
+            <canvas id="canvas-picker" width="261" height="24"></canvas>
+            <!--<div>Current color: <div id="current-color-box"></div></div>-->
+            <div id="canvas-picker-arrow"></div>
+        </div>
+        <?php if($canvasHelper->getConfig('enable_insert_text')):?>
+            <div id="canvas-text-block" class="vinous">
+                <div id="canvas-text-options">
+                    <h4><?php echo $this->__('Add text')?>:</h4>
+                    <p>
+                        <select id="canvas-font-family" onchange="changeTextOption(this,'font-family');">
+                           <?php $fontFamilies = $canvasHelper->getFontFamilies();?>
+                            <?php foreach($fontFamilies as $key => $family):?>
+                                <option value="<?php echo $key?>"><?php echo $family?></option>
+                            <?php endforeach;?>
+                        </select>
+                    </p>
+                    <p>
+                        <select id="canvas-font-size" onchange="changeTextOption(this,'font-size');">
+                            <?php $fontSizes = $canvasHelper->getFontSizes();?>
+                            <?php foreach($fontSizes as $key => $fontSize):?>
+                                <option value="<?php echo $key?>"><?php echo $fontSize;?></option>
+                            <?php endforeach;?>
+                        </select>
+                    </p>
+                    <p>
+                        <textarea  placeholder="<?php echo $this->__('Textfeld')?>" id="canvas-text"></textarea>
+                    </p>
+                </div>
+
+                <a href="#" onclick="addUpdateCanvasText();return false;">Text to canvas</a>
+            </div>
+         <?php endif;?>
+    </div>
+
+    <div id="centerbar-htmlcanvas">
+
+        <div id="canvas-options">
+            <?php if($canvasHelper->getConfig('enable_scale')):?>
+                <div id="canvas_rotate">
+                    <input type="button" onclick="scaleObject('minus');" value="-"/>
+                    <input type="button" onclick="scaleObject('plus');" value="+"/>
+                </div>
+             <?php endif;?>
+            <?php if($canvasHelper->getConfig('enable_scale')):?>
+                <div id="canvas_scale">
+                    <input type="button" onclick="rotateObject('left');" value="<-"/>
+                    <input type="button" onclick="rotateObject('right');" value="->"/>
+                </div>
+            <?php endif;?>
+            <?php if($canvasHelper->getConfig('enable_centered')):?>
+                <div id="canvas_centered">
+
+                    <input type="button" onclick="setCenterObject('horizontal','current');" value="horizontal"/>
+                    <input type="button" onclick="setCenterObject('vertical','current');" value="vertical"/>
+                </div>
+             <?php endif;?>
+            <?php if($canvasHelper->getConfig('enable_on_top_bottom')):?>
+                <div id="canvas_position">
+                    <input type="button" onclick="moveTo('top','current');" value="top"/>
+                    <input type="button" onclick="moveTo('bottom','current');" value="bottom"/>
+                </div>
+             <?php endif;?>
+            <?php if($canvasHelper->getConfig('enable_remove_button')):?>
+                <div id="canvas_removing">
+                    <input type="button" onclick="removeObject('current');" value="remove"/>
+                </div>
+             <?php endif;?>
+            <div class="clear"></div>
+        </div>
+
+        <div id="canvas-content">
+
+        </div>
+
+    </div>
+
+    <div id="rightbar-htmlcanvas">
+        <div class="vinous">
+            <?php $picCategories = $this->getPicCategories();?>
+            <select id="canvas-image-category" onchange="viewImageCategory();">
+                <?php if($canvasHelper->getConfig('enable_insert_cliparts')):?>
+                    <?php foreach($picCategories as $category):?>
+                        <option value="<?php echo $category->getId()?>"><?php echo $category->getName();?></option>
+                    <?php endforeach;?>
+                <?php endif;?>
+                <?php if($canvasHelper->getConfig('enable_insert_templates')):?>
+                    <option value="works"><?php echo $this->__('Templates')?></option>
+                 <?php endif;?>
+                <?php if($canvasHelper->getConfig('enable_user_uploads') && $canvasHelper->getConfig('max_uploads') > $canvasHelper->getUserUploadsNum()):?>
+                    <option value="useruploads"><?php echo $this->__('User Uploads')?></option>
+                 <?php endif;?>
+            </select>
+            <div id="canvas-image-block"></div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="canvas_button">
+        <a class="canvas_bt" href="#" onclick="saveToJson('<?php echo Mage::getBaseUrl()?>','<?php echo $item->getId()?>','<?php echo $item->getProductUrl()?>'); return false"><?php echo $this->__('Save')?></a>
+        <a class="canvas_bt" href="<?php echo $item->getProductUrl()?>"><?php echo $this->__('Back')?></a>
+    </div>
+
+<!--    <script type="text/javascript">-->
+<!--            reselect('select', 'sel_canvas', false )-->
+<!--    </script>-->
+
+    <script type="text/javascript">
+
+        //run color picker
+        var $ = jQuery.noConflict();
+        $(document).ready(function() {
+            var imagePicker = new Image();
+            imagePicker.onload = function() {
+                initPicker(this);
+            };
+            imagePicker.src = '<?php echo $this->getSkinUrl('images/htmlcanvas/palette.bmp') ?>';
+
+            //upload images ajax
+            $('#canvas-upload-form').live('submit', function(e) {
+                $("#canvas-image-block").html('');
+                e.preventDefault();
+                $(this).ajaxSubmit({
+                    success:  function(){
+                        viewImageCategory();
+                       // showuploadImages();
+                    } //call function after success
+                });
+            });
+
+        });
+    </script>
+
+
+            <script>
+                /* type options */
+                var picImageClass = 'pic-image-block';
+                var textBlockClass = 'text-image-block';
+                var imageClass = 'upload-image-block';
+                var canvasContainer = 'canvas-content';
+                var backgroundRect = 'canvas-background';
+                var rotateAngle = 60;
+                var scalePoint = 0.2;
+                /* end */
+                var canvasStage;
+                var canvasLayer;
+                var canvasBackgroundBox;
+                var currentColor = 'rgb(255,255,255)';
+                var textCounter = 1;
+                var picCounter = 1;
+                var activeColor = 'gray';
+                var hoverColor = 'gray';
+                var backBorder = 'gray';
+                var pickerPadding = 0;
+                var currentZIndex = 1;
+                var cmToPxCof = 37.795276;
+                var pxToCmCof = 0.02645833;
+                var leftTopCurveArea;
+                var leftBottomCurveArea;
+                var rightTopCurveArea;
+                var rightBottomCurveArea;
+                var fillCurveArea = 'white';
+                var strokeCurve = 'gray';
+                var curveClass = 'curve-oval-area';
+                var leftFrame;
+                var rightFrame;
+                var topFrame;
+                var bottomFrame;
+                var fillFrameArea = 'gray';
+                var strokeFrame = 'green';
+                var frameClass = 'curve-frame-area';
+                var curveNotVisibleClass = 'curve-not-visible-oval'
+                var notVisibleFillColor = '#4f0016';
+                var leftTopCurveNotVisible;
+                var leftBottomCurveNotVisible;
+                var rightTopCurveNotVisible;
+                var rightBottomCurveNotVisible;
+                var canvasWidthDefault = 364;
+                createCanvas();
+                showColor(currentColor);
+                setChosenColor(currentColor);
+
+                var activeElement;
+                setActiveObject(canvasBackgroundBox);
+                setTextOption(0,'all');
+                function viewImageCategory()
+                {
+                    var selectedCategory = $("#canvas-image-category option:selected").val();
+                    var ajaxGet = '';
+                    if(parseInt(selectedCategory) > 0)
+                    {
+                        ajaxGet = '?model=pics&id=' + parseInt(selectedCategory);
+                    }
+                    else
+                    {
+                        ajaxGet = '?model=' + selectedCategory;
+                    }
+                    var allUrl = '<?php echo Mage::getBaseUrl()?>' + 'imagecreate/show/loadimages' + ajaxGet;
+                    $("#canvas-image-block").load(allUrl);
+                }
+				function showPreloader()
+                {
+                    $("#canvas-image-block").html('');
+                    $("#loadingmask").show();
+                }
+                function hidePreloader()
+                {
+                    $("#loadingmask").hide();
+                }
+
+
+
+                viewImageCategory();
+                setPickerArrow(currentColor);
+            </script>
+        <?php if($build):?>
+            <script>loadFromJson(<?php echo $build->getJsonOptions();?>,<?php echo $build->getPicNum();?>,<?php echo $build->getJsonImages();?>,'<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'media/htmlcanvas/'?>');</script>
+        <?php endif;?>
+    </div>
+    <?php else:?>
+        <script>setLocation('<?php echo Mage::getBaseUrl()?>error404');</script>
+    <?php endif;?>
+<?php else:?>
+    <script>setLocation('<?php echo Mage::getBaseUrl()?>error404');</script>
+<?php endif;?>

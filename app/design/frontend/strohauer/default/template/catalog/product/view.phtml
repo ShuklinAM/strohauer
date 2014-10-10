@@ -1,0 +1,230 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<div class="product-view">
+    <div class="product-essential">
+
+<?php if(Mage::getStoreConfig('templatesettings/templatesettings_options/options_ajaxcart') && $isAjax == 1):?>
+        <?php
+        $oldUrl = $this->getSubmitUrl($_product);
+        $submitUrl = $this->getSubmitUrl($_product);
+        $newUrl = str_replace('checkout/cart/add','templatesettings/ajax/addtocart',$this->getAddToCartUrl($_product));
+        $isAjax = 0;
+        if($oldUrl != $newUrl)
+        {
+            $isAjax = 1;
+        }
+
+        ?>
+       <?php $submitUrl = $newUrl;?>
+        <?php else:?>
+            <?php $submitUrl = $this->getSubmitUrl($_product);?>
+        <?php endif;?>
+
+    <form action="<?php echo $submitUrl ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+        <?php echo $this->getBlockHtml('formkey') ?>
+        <div class="no-display">
+            <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+            <input type="hidden" name="related_product" id="related-products-field" value="" />
+        </div>
+
+
+
+        <div class="product-shop">
+            <div class="product-name">
+                <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+            </div>
+
+
+            <?php echo $this->getChildHtml('alert_urls') ?>
+            <?php echo $this->getChildHtml('product_type_data') ?>
+            <?php echo $this->getTierPriceHtml() ?>
+            <?php echo $this->getChildHtml('extrahint') ?>
+
+            <?php if ($_product->getShortDescription()):?>
+            <div class="short-description">
+                <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+            </div>
+            <?php endif;?>
+
+            <div class="product_wrap">
+                <?php echo $this->getChildHtml('other');?>
+
+                <?php if(!$_product->isGrouped()): ?>
+                <div class="product-options">
+                    <dl>
+    <!--                    <dt><label for="qty"></label></dt>-->
+                        <dd>
+                            <div class="input-box">
+                                <input type="text" name="qty" id="qty" placeholder="<?php echo $this->__('Quantity')?>" maxlength="12" value="<?php if($this->getProductDefaultQty() * 1 > 0){ echo $this->getProductDefaultQty() * 1; }?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <?php endif; ?>
+
+                <?php if (!$this->hasOptions()):?>
+                    <div class="add-to-box">
+                        <?php if($_product->isSaleable()): ?>
+                            <?php echo $this->getChildHtml('addtocart') ?>
+                        <?php endif; ?>
+                    </div>
+                    <?php echo $this->getChildHtml('extra_buttons') ?>
+                <?php endif; ?>
+
+                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                    <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                <?php endif;?>
+
+                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+                <?php endif;?>
+
+                <?php echo $this->getChildHtml('addto') ?>
+                <?php //echo $this->getReviewsSummaryHtml($_product, false, true)?>
+
+
+            </div>
+
+
+                <!-- html canvas -->
+                <?php if(Mage::helper('codevog_htmlcanvas')->canShow()):?>
+                    <?php $canvasHelper = Mage::helper('codevog_htmlcanvas');
+                        $item = $canvasHelper->getCurrentItem();
+                        if($item->getId()):
+                            $build = $canvasHelper->getBuildByIp($item->getId());
+                        endif;
+                    ?>
+                    <div class="designer_wrap <?php if($build):?> designer_wrap_result <?php endif;?>">
+                        <?php echo $this->getLayout()->createBlock('codevog_htmlcanvas/canvasform')->toHtml();?>
+                    </div>
+                <?php endif;?>
+                <!-- end canvas -->
+
+
+                <!-- imagebuilder block-->
+                <?php if(Mage::getStoreConfig('templatesettings/templatesettings_options/options_imagebuilder')):?>
+                    <?php echo $this->getLayout()->createBlock('codevog_imagebuilder/builderform')->toHtml();?>
+                <?php endif;?>
+                <!-- imagebuilder end-->
+
+
+
+
+        </div>
+
+        <div class="product-img-box">
+            <?php echo $this->getChildHtml('media') ?>
+        </div>
+
+        <div class="clear"></div>
+
+    </form>
+<?php if(!Mage::getStoreConfig('templatesettings/templatesettings_options/options_ajaxcart')):?>
+    <script type="text/javascript">
+    //<![CDATA[
+        var productAddToCartForm = new VarienForm('product_addtocart_form');
+        productAddToCartForm.submit = function(button, url) {
+
+            if (this.validator.validate()) {
+                var form = this.form;
+                var oldUrl = form.action;
+
+                if (url) {
+                   form.action = url;
+                }
+                var e = null;
+                try {
+                    this.form.submit();
+                } catch (e) {
+                }
+                this.form.action = oldUrl;
+                if (e) {
+                    throw e;
+                }
+
+                if (button && button != 'undefined') {
+                    button.disabled = true;
+                }
+            }
+        }.bind(productAddToCartForm);
+
+        productAddToCartForm.submitLight = function(button, url){
+            if(this.validator) {
+                var nv = Validation.methods;
+                delete Validation.methods['required-entry'];
+                delete Validation.methods['validate-one-required'];
+                delete Validation.methods['validate-one-required-by-name'];
+                if (this.validator.validate()) {
+                    if (url) {
+                        this.form.action = url;
+                    }
+                    this.form.submit();
+                }
+                Object.extend(Validation.methods, nv);
+            }
+        }.bind(productAddToCartForm);
+
+    //]]>
+    </script>
+
+    <?php endif;?>
+    </div>
+
+	<!-- ADDITIONAL -->
+	<?php echo $this->getChildHtml('product_additional_data') ?>
+	<!-- ADDITIONAL -->
+
+    <?php
+    $after_tabs_block = Mage::getModel('cms/block')->load('template_after_tabs');
+    if($after_tabs_block->getIsActive()){
+        echo '<div class="after-tabs-block additional-block">'.$this->getLayout()->createBlock('cms/block')->setBlockId('template_after_tabs')->toHtml().'</div>';
+    }
+    ?>
+
+	<!-- RELATED -->
+	<?php echo $this->getChildHtml('content_related') ?>
+	<!-- RELATED -->
+
+</div>
+
+<!---->
+<!--<script type="text/javascript">-->
+<!--//    reselect('select', 'sel_product', false )-->
+<!--</script>-->

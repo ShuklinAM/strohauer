@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<layout version="0.0.1">
+
+    <!-- products -->
+    <adminhtml_htmlcanvas_products>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <path>js/jquery-1.7.2.min.js</path>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <path>js/htmlcanvas/products.js</path>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_products" name="productsform"/>
+        </reference>
+    </adminhtml_htmlcanvas_products>
+    <!-- end products -->
+
+    <!-- works blocks -->
+    <adminhtml_htmlcanvas_filterworks>
+        <reference name="root">
+            <block type="codevog_htmlcanvas/adminhtml_works_grid" name="root" output="toHtml" />
+        </reference>
+    </adminhtml_htmlcanvas_filterworks>
+    <adminhtml_htmlcanvas_works>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_works" name="worksgrid"/>
+        </reference>
+    </adminhtml_htmlcanvas_works>
+    <adminhtml_htmlcanvas_editwork>
+        <reference name="head">
+            <action method="addCss">
+                <path>css/fancybox/jquery.fancybox-buttons.css?v=1.0.5</path>
+            </action>
+            <action method="addCss">
+                <path>css/fancybox/jquery.fancybox.css?v=2.1.2</path>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <path>js/jquery-1.7.2.min.js</path>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <path>js/fancybox/jquery.fancybox.js?v=2.1.3</path>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <path>js/fancybox/jquery.mousewheel-3.0.6.pack.js</path>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <path>js/fancybox/jquery.fancybox-buttons.js?v=1.0.5</path>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_editwork" name="editwork.grid_edit"/>
+        </reference>
+    </adminhtml_htmlcanvas_editwork>
+    <!-- end works -->
+    <!-- sizes blocks -->
+    <adminhtml_htmlcanvas_filtersizes>
+        <reference name="root">
+            <block type="codevog_htmlcanvas/adminhtml_sizes_grid" name="root" output="toHtml" />
+        </reference>
+    </adminhtml_htmlcanvas_filtersizes>
+    <adminhtml_htmlcanvas_sizes>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_sizes" name="sizesgrid"/>
+        </reference>
+    </adminhtml_htmlcanvas_sizes>
+    <adminhtml_htmlcanvas_addsize>
+        <update handle="adminhtml_htmlcanvas_editsize"/>
+    </adminhtml_htmlcanvas_addsize>
+    <adminhtml_htmlcanvas_editsize>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_editsize" name="editsize.grid_edit"/>
+        </reference>
+    </adminhtml_htmlcanvas_editsize>
+    <!-- end sizes -->
+
+    <!-- pic category blocks -->
+    <adminhtml_htmlcanvas_filterpicscategories>
+        <reference name="root">
+            <block type="codevog_htmlcanvas/adminhtml_categories_grid" name="root" output="toHtml" />
+        </reference>
+    </adminhtml_htmlcanvas_filterpicscategories>
+    <adminhtml_htmlcanvas_picscategories>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_categories" name="categoriesgrid"/>
+        </reference>
+    </adminhtml_htmlcanvas_picscategories>
+    <adminhtml_htmlcanvas_addpiccategory>
+        <update handle="adminhtml_htmlcanvas_editpiccategory"/>
+    </adminhtml_htmlcanvas_addpiccategory>
+    <adminhtml_htmlcanvas_editpiccategory>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_editcategory" name="editcategory.grid_edit"/>
+        </reference>
+    </adminhtml_htmlcanvas_editpiccategory>
+    <!-- end pic category -->
+
+    <!-- pic subcategory blocks -->
+    <adminhtml_htmlcanvas_filterpicssubcategories>
+        <reference name="root">
+            <block type="codevog_htmlcanvas/adminhtml_subcategories_grid" name="root" output="toHtml" />
+        </reference>
+    </adminhtml_htmlcanvas_filterpicssubcategories>
+    <adminhtml_htmlcanvas_picssubcategories>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_subcategories" name="subcategoriesgrid"/>
+        </reference>
+    </adminhtml_htmlcanvas_picssubcategories>
+    <adminhtml_htmlcanvas_addpicsubcategory>
+        <update handle="adminhtml_htmlcanvas_editpicsubcategory"/>
+    </adminhtml_htmlcanvas_addpicsubcategory>
+    <adminhtml_htmlcanvas_editpicsubcategory>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_editsubcategory" name="editsubcategory.grid_edit"/>
+        </reference>
+    </adminhtml_htmlcanvas_editpicsubcategory>
+    <!-- end pic subcategory -->
+
+    <!-- pics upload -->
+    <adminhtml_htmlcanvas_filterpicsupload>
+        <reference name="root">
+            <block type="codevog_htmlcanvas/adminhtml_picsupload_grid" name="root" output="toHtml" />
+        </reference>
+    </adminhtml_htmlcanvas_filterpicsupload>
+    <adminhtml_htmlcanvas_picsupload>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_picsupload" name="picsuploadgrid"/>
+        </reference>
+    </adminhtml_htmlcanvas_picsupload>
+    <adminhtml_htmlcanvas_addpicupload>
+        <update handle="adminhtml_htmlcanvas_editpicupload"/>
+    </adminhtml_htmlcanvas_addpicupload>
+    <adminhtml_htmlcanvas_editpicupload>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_editpicupload" name="editpicsupload.grid_edit"/>
+        </reference>
+    </adminhtml_htmlcanvas_editpicupload>
+    <!-- end pics upload -->
+    <!-- user uploads-->
+    <adminhtml_htmlcanvas_filteruseruploads>
+        <reference name="root">
+            <block type="codevog_htmlcanvas/adminhtml_useruploads_grid" name="root" output="toHtml" />
+        </reference>
+    </adminhtml_htmlcanvas_filteruseruploads>
+    <adminhtml_htmlcanvas_useruploads>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_useruploads" name="useruploadsgrid"/>
+        </reference>
+    </adminhtml_htmlcanvas_useruploads>
+    <!-- end user uploads -->
+
+    <!-- about -->
+    <adminhtml_htmlcanvas_filterabout>
+        <reference name="root">
+            <block type="codevog_htmlcanvas/adminhtml_about_grid" name="root" output="toHtml" />
+        </reference>
+    </adminhtml_htmlcanvas_filterabout>
+    <adminhtml_htmlcanvas_about>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_about" name="aboutgrid"/>
+        </reference>
+    </adminhtml_htmlcanvas_about>
+    <adminhtml_htmlcanvas_editabout>
+        <update handle="editor"/>
+        <reference name="head">
+            <action method="setCanLoadExtJs"><flag>1</flag></action>
+            <action method="setCanLoadTinyMce"><flag>1</flag></action>
+            <action method="addJs"><script>lib/flex.js</script></action>
+            <action method="addJs"><script>mage/adminhtml/flexuploader.js</script></action>
+            <action method="addJs"><script>mage/adminhtml/browser.js</script></action>
+            <action method="addJs"><script>prototype/window.js</script></action>
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/magento.css</name></action>
+            <action method="addItem"><type>js</type><name>mage/adminhtml/wysiwyg/tiny_mce/setup.js</name><params/></action>
+            <action method="addItem"><type>js</type><name>tiny_mce/tiny_mce.js</name><params/></action>
+        </reference>
+        <reference name="content">
+            <block type="codevog_htmlcanvas/adminhtml_editabout" name="editabout.grid_edit"/>
+        </reference>
+    </adminhtml_htmlcanvas_editabout>
+    <!-- about -->
+
+
+    <adminhtml_sales_order_view>
+        <reference name="head">
+            <action method="addCss">
+                <path>css/fancybox/jquery.fancybox-buttons.css?v=1.0.5</path>
+            </action>
+            <action method="addCss">
+                <path>css/fancybox/jquery.fancybox.css?v=2.1.2</path>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <path>js/jquery-1.7.2.min.js</path>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <path>js/fancybox/jquery.fancybox.js?v=2.1.3</path>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <path>js/fancybox/jquery.mousewheel-3.0.6.pack.js</path>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <path>js/fancybox/jquery.fancybox-buttons.js?v=1.0.5</path>
+            </action>
+        </reference>
+        <reference name="order_items">
+            <action method="setTemplate"><template>codevog/htmlcanvas/sales/order/view/items.phtml</template></action>
+            <action method="addItemRender"><type>default</type><block>adminhtml/sales_order_view_items_renderer_default</block><template>codevog/htmlcanvas/sales/order/view/items/renderer/default.phtml</template></action>
+        </reference>
+    </adminhtml_sales_order_view>
+</layout>

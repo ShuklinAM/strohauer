@@ -1,0 +1,32 @@
+<div>
+    <?php
+        $doneBuilds = $this->getWorks();
+        if($doneBuilds->getSize()):
+    ?>
+         <a class="canvas_bt" href="#add-template-block" id="add-template-href"><?php echo $this->__('Add Templates')?></a>
+         <div style="display: none;">
+             <div id="add-template-block" style="width: 800px;">
+                 <?php foreach($doneBuilds as $work):?>
+                     <div style="float: left;padding: 10px;">
+                         <img style="width:185px;cursor:pointer;" class='insert-template' src='<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'media/htmlcanvas/builds/'. $work->getImage()?>' onclick='setActiveInsertWork(this,<?php echo str_replace("'",'',$work->getJsonOptions())?>,<?php echo $work->getPicNum()?>,<?php echo $work->getJsonImages()?>,"<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'media/htmlcanvas/'?>");'/>
+                     </div>
+                  <?php endforeach;?>
+                 <div style="clear: both;">
+                     <a class="canvas_bt" id="add-href-template" href="#"><?php echo $this->__('Add Template')?></a>
+                 </div>
+             </div>
+         </div>
+    <script>
+        $("#add-template-href").fancybox();
+
+        function setActiveInsertWork(object,jsonOptions,picNum,jsonImages,imageUrl)
+        {
+            $(".insert-template").attr('id','');
+            $("#add-href-template").attr('onclick','$.fancybox.close();loadFromJson(' + JSON.stringify(jsonOptions) +  ',' + picNum +  ',' + JSON.stringify(jsonImages) +  ',"' + imageUrl +  '");return false;');
+            $(object).attr('id','active-insert-template');
+        }
+    </script>
+        <?php else:?>
+            <?php echo $this->__('There Are No Works Yet')?>
+        <?php endif;?>
+</div>

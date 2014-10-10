@@ -1,0 +1,40 @@
+<?php $picSubcategories = $this->getSubcategories();?>
+<?php if($picSubcategories->getSize()):?>
+
+        <select id="pic-subcategory-pichshow" onchange="showPicsSubcategory();">
+            <?php foreach($picSubcategories as $picSubcategory):?>
+                <option value="<?php echo $picSubcategory->getId()?>"
+                    <?php if($picSubcategory->getId() == $this->getCurrentSubcatId()): echo ' selected '; endif;?>
+                ><?php echo $picSubcategory->getName()?></option>
+            <?php endforeach;?>
+        </select>
+        <div class="canvas_img">
+            <?php if($this->getPics()->getSize()):?>
+                <?php foreach($this->getPics() as $pic):?>
+                    <img style="cursor:pointer;" onclick="addCanvasPic(this);" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'media/htmlcanvas/clipart/'. $pic->getPic();?> ">
+                <?php endforeach;?>
+            <?php else:?>
+                <?php echo $this->__('No Pics');?>
+            <?php endif;?>
+        </div>
+        <script>
+            function showPicsSubcategory()
+            {
+                var subcatId = $("#pic-subcategory-pichshow option:selected").val();
+                var allUrl = '<?php echo $this->getCurrentUrl()?>' + '&sub_id=' + subcatId;
+                showPreloader();
+                $.post(allUrl,{},function(data){
+                    $("#canvas-image-block").html(data);
+                    hidePreloader();
+                },'html');
+            }
+
+            $('select').selectik();
+
+        </script>
+
+<?php else:?>
+    <div>
+        <?php echo $this->__('No subcategories');?>
+    </div>
+<?php endif;?>

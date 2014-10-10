@@ -1,0 +1,43 @@
+<?php if(Mage::helper('codevog_news')->isActive() && $this->homeNewsActive()):?>
+<?php
+    $homeNews = $this->getHomeNews();
+    if($homeNews->count()):
+?>
+        <div class="container-white clearfix">
+            <?php $columnCount = 2;$currentColumn = 0;?>
+
+            <?php foreach($homeNews as $news):?>
+                <?php
+                    if($currentColumn == 0)
+                    {
+                        echo '<ol class="news">';
+                    }
+                ?>
+                <li>
+                    <?php if($news->getImage() && $this->homeImagesActive()):?>
+                        <div class="news-image-home">
+                            <a href="<?php echo Mage::helper('codevog_news')->getNewsUrl($news);?>">
+                                <img src="<?php echo Mage::helper('codevog_news')->getImageUrl($news);?>" width="228" title="<?php echo $news->getTitle()?>" alt="<?php echo $news->getTitle()?>">
+                            </a>
+                        </div>
+                        <?php endif;?>
+                    <div class="news-short-description">
+                    <?php echo $news->getShortDescription()?>
+                    </div>
+
+               </li>
+                   <?php
+                    $currentColumn ++;
+                    if($currentColumn == $columnCount)
+                    {
+                        echo '</ol>';
+                        $currentColumn = 0;
+                    }
+                    ?>
+            <?php endforeach;?>
+            <?php if($currentColumn != 0): echo '</ol>'; endif;?>
+            </ol>
+            <div class="clear"></div>
+        </div>
+    <?php endif;?>
+<?php endif;?>

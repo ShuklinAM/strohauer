@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<layout version="0.0.1">
+    <templatesettings_ajax_loginform>
+        <reference name="root">
+            <block type="customer/form_login" template="codevog/templatesettings/login.phtml" name="root" output="toHtml" />
+        </reference>
+    </templatesettings_ajax_loginform>
+    <templatesettings_ajax_registerform>
+        <reference name="root">
+            <block type="customer/form_register" name="root" output="toHtml" template="codevog/templatesettings/register.phtml">
+                <block type="page/html_wrapper" name="customer.form.register.fields.before" as="form_fields_before" translate="label">
+                    <label>Form Fields Before</label>
+                </block>
+            </block>
+        </reference>
+    </templatesettings_ajax_registerform>
+    <templatesettings_ajax_addtocart>
+        <reference name="root">
+            <block type="checkout/cart_sidebar" name="root" template="checkout/cart/cart-top.phtml" output="toHtml"/>
+        </reference>
+    </templatesettings_ajax_addtocart>
+    <templatesettings_ajax_showcart>
+        <reference name="root">
+            <block type="checkout/cart" name="root">
+                <action method="setCartTemplate"><value>codevog/templatesettings/cart.phtml</value></action>
+                <action method="setEmptyTemplate"><value>checkout/cart/noItems.phtml</value></action>
+                <action method="chooseTemplate"/>
+                <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>codevog/templatesettings/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>codevog/templatesettings/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>codevog/templatesettings/cart/item/default.phtml</template></action>
+                <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>
+            </block>
+        </reference>
+    </templatesettings_ajax_showcart>
+    <templatesettings_ajax_updatecart>
+        <reference name="root">
+            <block type="checkout/cart_sidebar" name="root" template="checkout/cart/cart-top.phtml" output="toHtml"/>
+        </reference>
+    </templatesettings_ajax_updatecart>
+    <templatesettings_ajax_deletecart>
+        <reference name="root">
+            <block type="checkout/cart_sidebar" name="root" template="checkout/cart/cart-top.phtml" output="toHtml"/>
+        </reference>
+    </templatesettings_ajax_deletecart>
+</layout>

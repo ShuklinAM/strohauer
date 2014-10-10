@@ -1,0 +1,37 @@
+<?php if(Mage::helper('codevog_news')->isActive() && $this->rightNewsActive()):?>
+<?php $rightNews = $this->getRightNews();?>
+<?php if($rightNews->count()):?>
+    <div class="block block-list">
+        <div class="block-title">
+            <strong><span><?php echo $this->__('Latest news') ?>
+        </span></strong>
+        </div>
+        <div class="block-content">
+            <ol id="rightnews">
+                <?php foreach($rightNews as $news): ?>
+                <li class="news-element">
+                    <div class="news-name" style="clear:both;">
+                        <a href="<?php echo Mage::helper('codevog_news')->getNewsUrl($news);?>"><?php echo $news->getTitle()?></a>
+                        (<?php echo Mage::helper('codevog_news')->getConvertedDate($news->getStartDate());?>)
+                    </div>
+                    <?php if($news->getImage() && $this->rightImagesActive()):?>
+                    <div class="news-image-left" style="float:left;">
+                        <img style="margin:5px;" src="<?php echo Mage::helper('codevog_news')->getImageUrl($news); ?>" width="100px" title="<?php echo $news->getTitle()?>" alt="<?php echo $news->getTitle()?>">
+                    </div>
+                    <?php endif;?>
+                    <div class="news-short-description">
+                        <?php echo $news->getShortDescription()?>
+                    </div>
+                    <div class="news-view-details" style="clear:both;float:right;"><a href="<?php echo Mage::helper('codevog_news')->getNewsUrl($news);?>"><?php echo $this->__('View Details')?></a></div>
+                </li>
+                <?php endforeach; ?>
+            </ol>
+            <script type="text/javascript">decorateList('rightnews')</script>
+            <div class="actions" style=clear:both;"">
+            <a href="<?php echo Mage::helper('codevog_news')->getNewsListUrl();?>" class="button" title="<?php echo $this->__('View All News') ?>"><?php echo $this->__('View all news') ?></a>
+        </div>
+    </div>
+    </div>
+
+    <?php endif;?>
+<?php endif;?>

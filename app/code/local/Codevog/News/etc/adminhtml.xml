@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <codevog_news>
+            <title>News</title>
+            <sort_order>499</sort_order>
+            <action>adminhtml/news/view</action>
+        </codevog_news>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <codevog_news>
+                        <title>News</title>
+                        <sort_order>499</sort_order>
+                        <action>adminhtml/news/view</action>
+                    </codevog_news>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

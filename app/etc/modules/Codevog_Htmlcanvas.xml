@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<config>
+    <modules>
+        <Codevog_Htmlcanvas>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Codevog_Htmlcanvas>
+    </modules>
+</config>

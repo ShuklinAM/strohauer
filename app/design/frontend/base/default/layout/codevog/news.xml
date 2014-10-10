@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout version="0.0.1">
+    <news_index_index>
+        <reference name="content">
+            <block type="codevog_news/newslist" name="news.list">
+                <block type="codevog_news/controls" name="news.controls" template="codevog/news/controls.phtml"/>
+            </block>
+        </reference>
+    </news_index_index>
+    <news_view_index>
+        <reference name="content">
+            <block type="codevog_news/newsview" name="news.page" template="codevog/news/view.phtml"/>
+        </reference>
+    </news_view_index>
+ </layout>

@@ -1,0 +1,20 @@
+<dt><?php echo $this->__('Price') ?></dt>
+<dd>
+    <b class="left-price"><?php echo Mage::helper('core')->currency($this->_minPrice, true, false);?></b>
+    <b class="right-price"><?php echo Mage::helper('core')->currency($this->_maxPrice, true, false);?></b>
+    <div class="slider slider-horizontal">
+        <input class="span2" id="priceSlider" type="text" class="span2" value="<?php echo $this->_currentMinPrice;?>,<?php echo $this->_currentMaxPrice;?>" data-slider-value="[<?php echo $this->_currentMinPrice;?>,<?php echo $this->_currentMaxPrice;?>]" data-slider-min="<?php echo $this->_minPrice;?>" data-slider-max="<?php echo $this->_maxPrice;?>" data-slider-step="1" data-slider-selection="after">
+    </div>
+
+    <script type="text/javascript">
+
+        var getPriceFromSlider = function()
+        {
+            var prices = priceSlider.getValue();
+            filterItems('<?php echo $this->getCleanPriceSliderUrl();?>min=' + prices[0] + '&max=' + prices[1]);
+        };
+
+        var priceSlider = jQuery('#priceSlider').slider().on('slideStop', getPriceFromSlider).data('slider');
+
+    </script>
+</dd>
