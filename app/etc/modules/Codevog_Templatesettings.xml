@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Codevog_Templatesettings>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Codevog_Templatesettings>
+    </modules>
+</config>

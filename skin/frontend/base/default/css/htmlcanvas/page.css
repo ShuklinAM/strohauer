@@ -1,0 +1,290 @@
+.wrap_canvas select {
+    width: 222px;
+}
+
+.custom-select {
+    margin-bottom: 8px;
+}
+
+.wrap_canvas .custom-text {
+    color: #cecece;
+    background: #1a070c url("../../images/htmlcanvas/icon_arrow_sel.png") no-repeat 96% 50%;
+    border-color: #222;
+}
+
+.wrap_canvas .custom-select .custom-text:before {
+    background: none;
+}
+
+.wrap_canvas {
+    padding: 0 30px;
+}
+
+.wrap_canvas h4 {
+    margin-bottom: 8px;
+}
+
+.vinous {
+    background: #360e19;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+#leftbar-htmlcanvas
+{
+    float: left;
+    width: 280px;
+}
+#rightbar-htmlcanvas
+{
+    float: right;
+    width: 280px;
+}
+#container-htmlcanvas
+{
+    width: 1000px;
+    margin: 0 auto;
+}
+#content-htmlcanvas
+{
+
+}
+
+#centerbar-htmlcanvas {
+    float: left;
+    width: 364px;
+    margin-left: 13px;
+}
+
+.canvas_button {
+    clear: both;
+    margin: 30px 0;
+}
+
+.sel_canvas .sel_imul {
+    margin-bottom: 8px;
+}
+
+.sel_canvas .sel_imul .sel_selected,
+.sel_canvas .selected-text,
+.sel_canvas .sel_options {
+    width: 262px;
+    line-height: 28px;
+    color: #cecece;
+}
+
+.sel_canvas .sel_options {
+    max-height: 150px;
+    border-color: #222;
+}
+
+.sel_canvas .selected-text {
+    width: 222px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: #1a070c;
+}
+
+.sel_canvas .sel_options .sel_option {
+    color: #000;
+}
+
+.sel_canvas .sel_options .sel_option:hover {
+    color: #fff;
+    background: #360e19;
+}
+
+.sel_canvas .sel_imul .sel_selected {
+
+    border-color: #222;
+}
+
+.sel_canvas .sel_imul .sel_selected .sel_arraw {
+    background: #1a070c url("../../images/htmlcanvas/icon_arrow_sel.png") no-repeat 50% 50% ;
+}
+
+#canvas-text {
+    background: #1a070c;
+    border-color: #222 ;
+    color: #cecece;
+    padding: 10px;
+    width: 242px;
+    margin-bottom: 8px;
+}
+
+
+
+#canvas-size-block {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#color-picker-block {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+
+#canvas-text-block > a {
+    display: block;
+    background: #9a1212;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+#canvas-text-block > a:hover {
+    background: #e9e9e9;
+    text-decoration: none;
+    color: #000;
+}
+
+
+.canvas_img  {
+    padding: 10px;
+    clear:both;
+    background: #eadfd9;
+    color: #000000;
+}
+
+.canvas_img img {
+    margin: 3px;
+
+    height: 40px;
+    width: 40px;
+}
+
+#rightbar-htmlcanvas .vinous {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.canvas_bt {
+    color: #fff;
+    display: inline-block;
+    padding: 0 10px;
+    height: 28px;
+    line-height: 28px;
+    border: none;
+    background: #9a1212;
+    *display: inline;
+    *zoom: 1;
+}
+
+.canvas_bt:hover {
+    color: #000;
+    text-decoration: none;
+    background: #e9e9e9;
+}
+
+#canvas-form-upload-image input {
+    margin-bottom: 8px;
+}
+
+#canvas-options > div {
+    float: left;
+    margin-left: 22px;
+}
+
+#canvas-options > div:first-child {
+    margin-left: 0;
+}
+
+#canvas-options {
+    height: 28px;
+    margin-bottom: 8px;
+}
+
+#canvas-options input {
+    border: none;
+    background: #9a1212 url("../../images/htmlcanvas/icon_canvas_bt.png") no-repeat 9px 4px;
+   text-indent: -99999px;
+    height: 28px;
+    width: 28px;
+    float: left;
+    margin-left: 6px;
+    overflow: hidden;
+
+}
+
+#canvas-options input:first-child {
+    margin-left: 0;
+}
+
+#canvas-options input:hover {
+    background-color: #e9e9e9;
+    background-position: 9px -36px;
+}
+
+#canvas_rotate input + input {
+    background-position: -25px 4px;
+}
+
+#canvas_rotate input + input:hover {
+    background-position: -25px -36px;
+}
+
+#canvas_scale input {
+    background-position: -75px 4px;
+}
+
+#canvas_scale input:hover {
+    background-position: -75px -36px;
+}
+
+#canvas_scale input+input {
+    background-position: -109px 4px;
+}
+
+#canvas_scale input + input:hover {
+    background-position: -109px -36px;
+}
+
+
+#canvas_centered input {
+    background-position: -158px 4px;
+}
+
+#canvas_centered input:hover {
+    background-position: -158px -36px;
+}
+
+#canvas_centered input+input {
+    background-position: -193px 4px;
+}
+
+#canvas_centered input + input:hover {
+    background-position: -193px -36px;
+}
+
+
+#canvas_position input {
+    background-position: -239px 4px;
+}
+
+#canvas_position input:hover {
+    background-position: -239px -36px;
+}
+
+#canvas_position input+input {
+    background-position: -274px 4px;
+}
+
+#canvas_position input + input:hover {
+    background-position: -274px -36px;
+}
+
+
+#canvas_removing input {
+    background-position: -321px 4px;
+}
+
+#canvas_removing input:hover {
+    background-position: -321px -36px;
+}
+
+#canvas-image-block {
+    text-align: center;
+}

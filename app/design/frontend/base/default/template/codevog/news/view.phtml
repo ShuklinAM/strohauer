@@ -1,0 +1,17 @@
+<?php
+    $currentNews = $this->getCurrentNews();
+?>
+<div class="news-title">
+    <h2><?php echo $currentNews->getTitle();?></h2>
+    (<?php echo Mage::helper('codevog_news')->getConvertedDate($currentNews->getStartDate())?>)
+</div>
+
+<div class="news-view">
+    <div class="image-news">
+        <img src="<?php echo Mage::helper('codevog_news')->getImageUrl($currentNews);?>">
+    </div>
+    <div class="news-description">
+        <?php echo $currentNews->getDescription()?>
+    </div>
+
+</div>

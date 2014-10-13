@@ -1,0 +1,78 @@
+<?php
+$categories = $this->getCategories();
+$checkedProducts = $this->getCheckedProductsIds();
+$columnCount = 1;
+?>
+<div class="grid">
+    <?php if($categories->getSize()):?>
+    <table>
+        <tr>
+            <td colspan="2" align="left">
+                <label for="label"><a href="#" onclick="selectAllCheckBoxes(true);return false;"><?php echo $this->__('Select All');?></label></a>&nbsp;&nbsp;
+                <label for="label"><a href="#" onclick="selectAllCheckBoxes(false);return false;"><?php echo $this->__('Unselect All');?></a></label>
+            </td>
+        </tr>
+        <?php foreach($categories as $category):?>
+        <tr class="productsList" id="productsList<?php echo $category->getId();?>">
+
+            <td colspan="4">
+                <?php
+                $counter = 0;
+                $products = $this->getProductsCategory($category);
+                ?>
+                <table>
+                    <tr>
+                        <td colspan="<?php echo ($columnCount * 4);?>">
+                            <h4>
+                                <?php echo $category->getName();?>
+                            </h4>
+                        </td>
+                    </tr>
+                    <?php if($products->getSize()):?>
+                    <tr>
+                        <?php for($i = 0; $i < $columnCount; $i++):?>
+                        <?php if($i < $products->getSize()):?>
+                            <th></th>
+                            <th><?php echo $this->__('Name');?></th>
+                            <th><?php echo $this->__('Sku');?></th>
+                            <th><?php echo $this->__('ID');?></th>
+                            <?php endif;?>
+                        <?php endfor;?>
+                    </tr>
+                    <?php foreach($products as $product):?>
+                        <?php
+                        if($counter == $columnCount) {echo '</tr>';$counter = 0;}
+                        if($counter == 0){echo '<tr>';}
+                        $counter++;
+                        ?>
+                        <td><input name="product[<?php echo $product->getId();?>]" type="checkbox" <?php if(in_array($product->getId(), $checkedProducts)): ?> checked="checked" <?php endif; ?> value="<?php echo $product->getId();?>" id="product<?php echo $product->getId();?>" class="product_ckeckbox"></td>
+                        <td><?php echo $product->getName();?></td>
+                        <td><?php echo $product->getSku();?></td>
+                        <td><?php echo $product->getId();?></td>
+                        <?php endforeach;?>
+                    <?php endif;?>
+                </table>
+            </td>
+        </tr>
+        <?php endforeach;?>
+    </table>
+    <script type="text/javascript">
+
+        function selectAllCheckBoxes(select)
+        {
+            var categoryId = jQuery("#categoryId").val();
+            var blockToCheck = '';
+            if(categoryId > 0)
+                blockToCheck = '#productsList' + categoryId + ' ';
+
+            var ids = '';
+            if(select)
+                jQuery(blockToCheck + ".product_ckeckbox").attr('checked', 'checked');
+            else
+                jQuery(blockToCheck + ".product_ckeckbox").removeAttr('checked');
+        }
+    </script>
+    <?php else:?>
+    <?php echo $this->__('No Products For Current Category');?>
+    <?php endif;?>
+</div>

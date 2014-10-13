@@ -1,0 +1,36 @@
+
+<?php
+    $newsCollection=$this->getNewsCollection();
+?>
+<div class="news-title">
+    <h2><?php echo $this->__('All news');?></h2>
+</div>
+<?php if(!$newsCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no news.') ?></p>
+<?php else: ?>
+<div class="news-list">
+    <?php echo $this->getToolbar();?>
+    <ul class="news-grid">
+    <?php foreach ($newsCollection as $news): ?>
+            <li class="news-grid-element">
+              <h4><a href="<?php echo Mage::helper('codevog_news')->getNewsUrl($news);?>"><?php echo $news->getTitle()?></a></h4>
+               <h5>(<?php echo Mage::helper('codevog_news')->getConvertedDate($news->getStartDate())?>)</h5>
+                <div class="news-container">
+                    <div class="news-image">
+                        <img width="300px" src="<?php echo Mage::helper('codevog_news')->getImageUrl($news);?>">
+                    </div>
+                    <div class="news-short-description">
+                        <?php echo $news->getShortDescription()?>
+                    </div>
+                    <div class="news-details">
+                        <a href="<?php echo Mage::helper('codevog_news')->getNewsUrl($news);?>"><?php echo $this->__('View Details')?></a>
+                    </div>
+                </div>
+            </li>
+    <?php endforeach ?>
+
+    </ul>
+    <?php echo $this->getToolbar();?>
+</div>
+<?php endif; ?>
+

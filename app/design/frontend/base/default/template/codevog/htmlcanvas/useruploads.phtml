@@ -1,0 +1,17 @@
+<div id="canvas-form-upload-image">
+    <form action="<?php echo Mage::getBaseUrl()?>imagecreate/show/userupload" method="post" enctype="multipart/form-data" id="canvas-upload-form">
+        <?php echo $this->__('Upload image:');?><input type="file" name="files" accept="image" required="required"/>
+        <input class="canvas_bt" type="submit" value="<?php echo $this->__('Upload')?>">
+    </form>
+</div>
+<?php $userUploads = $this->getUserUploads();?>
+
+<?php if($userUploads->getSize()):?>
+    <?php foreach($userUploads as $upload):?>
+        <div style="float: left; margin: 5px;">
+            <img  style="width:75px;cursor:pointer;" onclick="addCanvasImage(this);" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'media/htmlcanvas/uploads/'. $upload->getImage();?>">
+        </div>
+     <?php endforeach;?>
+<?php else:?>
+    <?php echo $this->__('No User Uploads');?>
+<?php endif;?>

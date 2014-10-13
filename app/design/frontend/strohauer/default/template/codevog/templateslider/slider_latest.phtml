@@ -1,0 +1,54 @@
+
+<!-- SLIDER BOF -->
+<?php if (($_products = $this->getLatestCollection()) && $_products->getSize()): ?>
+<div class="slider-container">
+<div class="clearfix">
+	<h2 class="subtitle"><?php echo $this->__('Latest Arrivals') ?></h2>
+	<a href="#" class="jcarousel-prev-horizontal" id="template_carousel_prev"></a>
+	<a href="#" class="jcarousel-next-horizontal" id="template_carousel_next"></a>
+</div>
+<ul id="template_carousel" class="jcarousel-skin-tango clearfix">
+<?php foreach ($_products->getItems() as $_product): ?>
+    <li class="clearfix">
+	    <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image">
+		    <?php echo $this->helper('templatesettings')->getLabel($_product);  ?>
+		    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(234, 240) ?>" width="234" height="240" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" /><em><?php echo $this->__('Details'); ?></em><span></span></a>
+        <div class="actions">
+            <?php if($_product->isSaleable()): ?>
+                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+            <?php else: ?>
+                <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+            <?php endif; ?>
+        </div>
+	    <div class="info">
+		    <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h3>
+		    <?php echo $this->getPriceHtml($_product, true, '-slider') ?>
+	    </div>
+    </li>
+<?php endforeach; ?>
+</ul>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+
+	function mycarousel_initCallback(carousel) {
+	    jQuery('#template_carousel_next').bind('click', function() {
+	        carousel.next();
+	        return false;
+	    });
+	    jQuery('#template_carousel_prev').bind('click', function() {
+	        carousel.prev();
+	        return false;
+	    });
+	}
+
+    $('#template_carousel').jcarousel({
+	    scroll: 1,
+    	initCallback: mycarousel_initCallback,
+	    buttonNextHTML: null,
+	    buttonPrevHTML: null
+    });
+});
+</script>
+<?php endif; ?>
+<!-- SLIDER EOF -->

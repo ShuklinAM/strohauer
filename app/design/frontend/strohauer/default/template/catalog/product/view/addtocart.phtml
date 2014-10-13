@@ -1,0 +1,144 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php $_product = $this->getProduct(); ?>
+<?php $buttonTitle = $this->__('Add to Cart'); ?>
+<?php if($_product->isSaleable()): ?>
+    <div class="add-to-cart">
+
+
+         <?php
+    $oldUrl = $this->getSubmitUrl($_product);
+    $newUrl = str_replace('checkout/cart/add','templatesettings/ajax/addtocart',$this->getAddToCartUrl($_product));
+    $isAjax = 0;
+    if($oldUrl != $newUrl)
+    {
+        $isAjax = 1;
+    }
+
+    ?>
+
+    <?php if(Mage::getStoreConfig('templatesettings/templatesettings_options/options_ajaxcart') && $isAjax == 1):?>
+        <a href="#customer-cart-ajax" id="customer_href"><?php echo $buttonTitle?></a>
+        <script>
+            var url = "<?php echo Mage::getBaseUrl()?>templatesettings/ajax/showcart";
+            jQuery("#customer_href").fancybox(
+                    {beforeLoad :
+                            function()
+                            {
+                                var productAddToCartForm = new VarienForm('product_addtocart_form');
+                                if(productAddToCartForm.validator.validate())
+                                {
+                                    Element.show('loadingmask');
+                                    addToCart("<?php echo $newUrl?>");
+                                }
+                                else
+                                {
+                                    parent.jQuery.fancybox.close();
+                                }
+
+                            },
+                        afterLoad : function()
+                        {
+                            jQuery(".fancybox-wrap").css('visibility','hidden');
+                        }
+                    }
+            );
+        </script>
+
+
+
+
+        <?php else:?>
+
+
+
+        <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+        <?php echo $this->getChildHtml('', true, true) ?>
+
+        <?php endif;?>
+    </div>
+
+
+
+<?php if(Mage::getStoreConfig('templatesettings/templatesettings_options/options_ajaxcart')):?>
+    <!-- Cart AJAX-->
+    <div style="display: none;">
+        <div id="customer-cart-ajax" style="min-width: 1000px;min-height: 500px;"></div>
+    </div>
+    <script>
+       jQuery.noConflict();
+
+       function addToCart(product_url)
+       {
+           jQuery("#customer-cart-ajax").html('');
+
+           new Ajax.Request(product_url, {
+               method: 'post',
+               parameters:  jQuery("#product_addtocart_form").serialize() ,
+               onComplete: function(data) {
+                   //  alert(data.responseText);
+                   jQuery("#cart-shop-block-ajax").html(data.responseText);
+                   var config = {
+                       over: function(){
+                           jQuery('.cart-top .details').animate({opacity:1, height:'toggle'}, 400);
+                       },
+                       timeout: 500, // number = milliseconds delay before onMouseOut
+                       out: function(){
+                           jQuery('.cart-top .details').animate({opacity:0, height:'toggle'}, 400);
+                       }
+                   };
+
+                   jQuery("div.cart-top").hoverIntent( config );
+
+                   var url = "<?php echo Mage::getBaseUrl()?>templatesettings/ajax/showcart";
+
+                   new Ajax.Request(url, {
+                       method: 'post',
+                       parameters: {},
+                       onComplete: function(data) {
+                           //  alert(data.responseText);
+                           jQuery("#customer-cart-ajax").html(data.responseText);
+                           Element.hide('loadingmask');
+                           jQuery(".fancybox-wrap").css('visibility','visible');
+                       }
+                   });
+               }
+           });
+       }
+
+
+    </script>
+
+
+    <?php endif;?>
+<!-- end cart -->
+
+
+
+
+<?php endif; ?>
+

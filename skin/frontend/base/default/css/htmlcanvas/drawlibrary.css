@@ -1,0 +1,60 @@
+#canvas-content
+{
+    background-color: white;
+    margin:0 auto;
+}
+#canvas-block
+{
+    width:300px;
+    margin:0 auto;
+}
+#canvas-picker
+{
+    width:261px;
+    height: 24px;
+}
+#canvas-picks img:hover
+{
+    cursor: pointer;
+}
+#current-color-box
+{
+    float: right;
+    clear: both;
+    width: 30px;
+    height: 30px;
+    border:1px solid black;
+}
+#canvas-text-block
+{
+    clear: both;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+#canvas-text
+{
+    width:200px;
+    height:100px;
+}
+.insert-template
+{
+    border:2px solid white;
+    width:100px;
+}
+#active-insert-template
+{
+    border:2px solid red;
+}
+#canvas-content
+{
+    clear: both;
+}
+#canvas-picker-arrow
+{
+    width: 11px;
+    height: 14px;
+    background: url("../../images/htmlcanvas/icon_arrow_color.png") no-repeat 0 0;
+    float: left;
+    margin-left:0px;
+    padding: 0;
+}

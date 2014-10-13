@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <codevog_htmlcanvas>
+            <title>Cake Configurator</title>
+            <sort_order>779</sort_order>
+            <children>
+                <products>
+                    <title>Choose Products</title>
+                    <sort_order>5</sort_order>
+                    <action>adminhtml/htmlcanvas/products</action>
+                </products>
+                <user_works>
+                    <title>User Works</title>
+                    <sort_order>10</sort_order>
+                    <action>adminhtml/htmlcanvas/works</action>
+                </user_works>
+                <htmlcanvas_sizes>
+                    <title>Sizes</title>
+                    <sort_order>15</sort_order>
+                    <action>adminhtml/htmlcanvas/sizes</action>
+                </htmlcanvas_sizes>
+                <htmlcanvas_pics>
+                    <title>Pics</title>
+                    <sort_order>20</sort_order>
+                    <children>
+                        <pics_categories>
+                            <title>Pics Categories</title>
+                            <sort_order>10</sort_order>
+                            <action>adminhtml/htmlcanvas/picscategories</action>
+                        </pics_categories>
+                        <pics_subcategories>
+                            <title>Pics Subcategories</title>
+                            <sort_order>20</sort_order>
+                            <action>adminhtml/htmlcanvas/picssubcategories</action>
+                        </pics_subcategories>
+                        <pics_uploads>
+                            <title>Pics Uploads</title>
+                            <sort_order>30</sort_order>
+                            <action>adminhtml/htmlcanvas/picsupload</action>
+                        </pics_uploads>
+                    </children>
+                </htmlcanvas_pics>
+                <user_uploads>
+                    <title>User Uploads</title>
+                    <sort_order>60</sort_order>
+                    <action>adminhtml/htmlcanvas/useruploads</action>
+                </user_uploads>
+                <canvas_options>
+                    <title>Cake Configurator Options</title>
+                    <sort_order>70</sort_order>
+                    <action>adminhtml/system_config/edit/section/templatesettings</action>
+                </canvas_options>
+                <canvas_about>
+                    <title>Cake Configurator Messages</title>
+                    <sort_order>80</sort_order>
+                    <action>adminhtml/htmlcanvas/about</action>
+                </canvas_about>
+            </children>
+        </codevog_htmlcanvas>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <codevog_htmlcanvas>
+                        <title>Cake Configurator</title>
+                        <sort_order>779</sort_order>
+                        <children>
+                            <products>
+                                <title>Choose Products</title>
+                                <sort_order>5</sort_order>
+                                <action>adminhtml/htmlcanvas/products</action>
+                            </products>
+                            <user_works>
+                                <title>User Works</title>
+                                <sort_order>10</sort_order>
+                                <action>adminhtml/htmlcanvas/works</action>
+                            </user_works>
+                            <htmlcanvas_sizes>
+                                <title>Sizes</title>
+                                <sort_order>15</sort_order>
+                                <action>adminhtml/htmlcanvas/sizes</action>
+                            </htmlcanvas_sizes>
+                            <htmlcanvas_pics>
+                                <title>Pics</title>
+                                <sort_order>20</sort_order>
+                                <children>
+                                    <pics_categories>
+                                        <title>Pics Categories</title>
+                                        <sort_order>10</sort_order>
+                                        <action>adminhtml/htmlcanvas/picscategories</action>
+                                    </pics_categories>
+                                    <pics_subcategories>
+                                        <title>Pics Subcategories</title>
+                                        <sort_order>20</sort_order>
+                                        <action>adminhtml/htmlcanvas/picssubcategories</action>
+                                    </pics_subcategories>
+                                    <pics_uploads>
+                                        <title>Pics Uploads</title>
+                                        <sort_order>30</sort_order>
+                                        <action>adminhtml/htmlcanvas/picsupload</action>
+                                    </pics_uploads>
+                                </children>
+                            </htmlcanvas_pics>
+                            <user_uploads>
+                                <title>User Uploads</title>
+                                <sort_order>60</sort_order>
+                                <action>adminhtml/htmlcanvas/useruploads</action>
+                            </user_uploads>
+                            <canvas_options>
+                                <title>Cake Configurator Options</title>
+                                <sort_order>70</sort_order>
+                                <action>adminhtml/system_config/edit/section/canvas</action>
+                            </canvas_options>
+                            <canvas_about>
+                                <title>Cake Configurator Messages</title>
+                                <sort_order>80</sort_order>
+                                <action>adminhtml/htmlcanvas/about</action>
+                            </canvas_about>
+                        </children>
+                    </codevog_htmlcanvas>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
