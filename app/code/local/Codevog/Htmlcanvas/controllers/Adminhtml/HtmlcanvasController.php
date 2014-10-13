@@ -339,29 +339,16 @@ class Codevog_Htmlcanvas_Adminhtml_HtmlcanvasController extends Mage_Adminhtml_C
                     $uploader->setAllowRenameFiles(true);
                     $uploader->setFilesDispersion(false);
                     //$uploader->setAllowCreateFolders(true);
-                    // Set media as the upload dir
                     $media_path  = Mage::getBaseDir('media').'/htmlcanvas/clipart';
 
                     // Upload the image
                     $new_name = $uploader->save($media_path, $_FILES['pic']['name']);
 
-
-                    //$newWidth = 600;
-                    //$imageSize = getimagesize($media_path.$new_name['file']);
-
-                    //$cof = $newWidth/ $imageSize[0];
-                    //$newHeight = $cof *  $imageSize[1];
-
-                    //$src = imagecreatefromjpeg($media_path.$new_name['file']);
-                    //$dst = imagecreatetruecolor($newWidth, $newHeight);
-                    //imagecopyresized($dst, $src, 0, 0, 0, 0, $newWidth, $newHeight, $imageSize[0],$imageSize[1]);
-                    //imagejpeg($dst,$media_path.$new_name['file']);
                     $data['pic'] = $new_name['file'];
 
                 }
                 catch (Exception $e) {
-                    print_r($e);
-                    die;
+                    Mage::getSingleton('adminhtml/session')->addError(Mage::helper('codevog_htmlcanvas')->__('Pic format must be *.png or *.gif'));
                 }
             }
 

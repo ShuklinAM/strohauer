@@ -33,6 +33,10 @@
 ?>
 <?php
     $filterUrls = Mage::helper('mana_filters/url');
+
+    $this->removeOrderFromAvailableOrders('relevance');
+    $this->removeOrderFromAvailableOrders('position');
+
 ?>
 <?php if($this->getCollection()->getSize()): ?>
 <div class="toolbar">

@@ -35,9 +35,9 @@ class Codevog_Htmlcanvas_Block_Adminhtml_Editpicupload extends Mage_Adminhtml_Bl
     {
         $pic = Mage::registry('current_pic');
         if ($pic->getId()) {
-            return Mage::helper('codevog_htmlcanvas')->__("Edit Pic");
+            return Mage::helper('codevog_htmlcanvas')->__("Edit Pic"). ' (*.png, *.gif)';
         } else {
-            return Mage::helper('codevog_htmlcanvas')->__("Add Pic");
+            return Mage::helper('codevog_htmlcanvas')->__("Add Pic"). ' (*.png, *.gif)';
         }
     }
 }

@@ -11,6 +11,7 @@
         var getPriceFromSlider = function()
         {
             var prices = priceSlider.getValue();
+
             filterItems('<?php echo $this->getCleanPriceSliderUrl();?>min=' + prices[0] + '&max=' + prices[1]);
         };
 
