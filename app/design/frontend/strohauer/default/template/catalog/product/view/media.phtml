@@ -35,14 +35,14 @@
     $_helper = $this->helper('catalog/output');
 ?>
 <div class="main-view">
-<a href="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>" class="product-image cloud-zoom" id="main-img"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(360, 434); ?>" width="360" height="434" alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>" /></a>
+<a href="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>" class="product-image cloud-zoom" id="main-img"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(360, 434); ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>" /></a>
 </div>
 <?php if (count($this->getGalleryImages()) > 0): ?>
 <div class="more-views">
     <ul>
     <?php $i = 0; foreach ($this->getGalleryImages() as $_image): $i++; ?>
         <li <?php echo ($i % 4 > 0 ? '' : 'class="last"' ) ?> >           
-            <a href="<?php echo $this->helper('catalog/image')->init($_product, 'image', $_image->getFile()); ?>" class="zoom-thumbnail cloud-zoom-gallery" title="<?php echo $this->htmlEscape($_image->getImageLabel()) ?>" rel="useZoom: 'main-img', smallImage: '<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_image->getFile())->resize(360, 434); ?>' "><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image', $_image->getFile())->resize(86, 104); ?>" width="86" height="104" alt="<?php echo $this->htmlEscape($_image->getImageLabel()) ?>" /></a>
+            <a href="<?php echo $this->helper('catalog/image')->init($_product, 'image', $_image->getFile()); ?>" class="zoom-thumbnail cloud-zoom-gallery" title="<?php echo $this->htmlEscape($_image->getImageLabel()) ?>" rel="useZoom: 'main-img', smallImage: '<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_image->getFile())->resize(360, 434); ?>' "><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image', $_image->getFile())->resize(86, 104); ?>" alt="<?php echo $this->htmlEscape($_image->getImageLabel()) ?>" /></a>
         </li>
     <?php endforeach; ?>
 

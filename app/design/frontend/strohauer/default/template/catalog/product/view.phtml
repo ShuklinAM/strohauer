@@ -64,7 +64,9 @@
             <input type="hidden" name="related_product" id="related-products-field" value="" />
         </div>
 
-
+        <div class="product-img-box">
+            <?php echo $this->getChildHtml('media') ?>
+        </div>
 
         <div class="product-shop">
             <div class="product-name">
@@ -121,37 +123,28 @@
 
 
             </div>
-
-
-                <!-- html canvas -->
-                <?php if(Mage::helper('codevog_htmlcanvas')->canShow()):?>
-                    <?php $canvasHelper = Mage::helper('codevog_htmlcanvas');
-                        $item = $canvasHelper->getCurrentItem();
-                        if($item->getId()):
-                            $build = $canvasHelper->getBuildByIp($item->getId());
-                        endif;
-                    ?>
-                    <div class="designer_wrap <?php if($build):?> designer_wrap_result <?php endif;?>">
-                        <?php echo $this->getLayout()->createBlock('codevog_htmlcanvas/canvasform')->toHtml();?>
-                    </div>
-                <?php endif;?>
-                <!-- end canvas -->
-
-
-                <!-- imagebuilder block-->
-                <?php if(Mage::getStoreConfig('templatesettings/templatesettings_options/options_imagebuilder')):?>
-                    <?php echo $this->getLayout()->createBlock('codevog_imagebuilder/builderform')->toHtml();?>
-                <?php endif;?>
-                <!-- imagebuilder end-->
-
-
-
-
         </div>
 
-        <div class="product-img-box">
-            <?php echo $this->getChildHtml('media') ?>
-        </div>
+        <!-- html canvas -->
+        <?php if(Mage::helper('codevog_htmlcanvas')->canShow()):?>
+            <?php $canvasHelper = Mage::helper('codevog_htmlcanvas');
+            $item = $canvasHelper->getCurrentItem();
+            if($item->getId()):
+                $build = $canvasHelper->getBuildByIp($item->getId());
+            endif;
+            ?>
+            <div class="designer_wrap <?php if($build):?> designer_wrap_result <?php endif;?>">
+                <?php echo $this->getLayout()->createBlock('codevog_htmlcanvas/canvasform')->toHtml();?>
+            </div>
+        <?php endif;?>
+        <!-- end canvas -->
+
+
+        <!-- imagebuilder block-->
+        <?php if(Mage::getStoreConfig('templatesettings/templatesettings_options/options_imagebuilder')):?>
+            <?php echo $this->getLayout()->createBlock('codevog_imagebuilder/builderform')->toHtml();?>
+        <?php endif;?>
+        <!-- imagebuilder end-->
 
         <div class="clear"></div>
 
