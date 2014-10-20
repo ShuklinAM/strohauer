@@ -12,7 +12,7 @@ jQuery(function($){
 	$("div.cart-top").hoverIntent( config );
 
 	//fix menu behavior
-	$('#nav li').hover(
+	$('.nav li').hover(
 		function(){
 			$(this).children('div').addClass('shown-sub');
 		},
@@ -21,8 +21,11 @@ jQuery(function($){
 		}
 	);
 
+
+
+
 	//fix description height
-	$('#nav li.menu-category-description').each(function(){
+	$('.nav li.menu-category-description').each(function(){
 		var height = 0;
 		$(this).parent().children('li').each(function(){
 			if ( $(this).height() > height )

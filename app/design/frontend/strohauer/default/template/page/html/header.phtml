@@ -42,13 +42,63 @@
                     <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><strong><?php echo $this->getLogoAlt() ?></strong><?php echo $this->getChildHtml('templateLogo', false) ?></a>
                 <?php endif?>
             </div>
-		    <?php echo $this->getChildHtml('topLinks') ?>
+            <div class="mhide">
+		        <?php echo $this->getChildHtml('topLinks') ?>
+            </div>
 		</div>
         <?php echo $this->getChildHtml('topContainer'); ?>
     </header>
 	<div class="menu-container clearfix">
-		<?php echo $this->getChildHtml('navTop') ?>
+        <nav class="codevog str-spmenu str-spmenu-vertical str-spmenu-left" id="mobmenu">
+            <div class="mshow">
+                <?php echo $this->getChildHtml('topLinks') ?>
+            </div>
+ 		<?php echo $this->getChildHtml('navTop') ?>
+        </nav>
+        <button type="button" id="showLeftPush"  class="navbar-toggle collapsed">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button> 
 		<?php //echo $this->getChildHtml('topSearch') ?>
 	</div>
+
+
 </div>
+<script>
+    var menuLeft = document.getElementById( 'mobmenu' ),
+        showLeftPush = document.getElementById( 'showLeftPush' ),
+        body = document.body;
+
+    showLeftPush.onclick = function() {
+        classie.toggle( this, 'active' );
+        classie.toggle( body, 'str-spmenu-push-toright' );
+        classie.toggle( menuLeft, 'str-spmenu-open' );
+         hBlock();
+    };
+
+    window.onresize = function(event) {
+        hBlock();
+        wBlock();
+    };
+
+
+    function hBlock() {
+        var h = jQuery(window).height(),
+            menu = jQuery('.str-spmenu-open');
+        if(menu.is(':visible')){
+            menu.height(h);
+        } else {
+            menu.removeAttr('style');
+        }
+    };
+
+
+    function hBlock(){
+
+    };
+
+
+</script>
 <!-- HEADER EOF -->

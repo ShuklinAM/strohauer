@@ -1,0 +1,81 @@
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+
+/*!_____________________________________*/
+
+@media (min-width: 1200px) {
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .main-shadow{
+
+    }
+
+    header,
+    .wrapper,
+    .main-shadow,
+    .main,
+    .white-container,
+    footer,
+    footer .footer-subscribe{
+        height: auto !important;
+        min-height: 100%;
+        min-width: inherit;
+        width: 100%;
+    }
+
+    nav{
+        height: auto;
+    }
+
+    header .logo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #cart-shop-block-ajax{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 2000;
+    }
+
+    .news li{
+        width: 100%;
+    }
+
+    .news li img {
+        margin: 8px 8px 8px 0;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+
+
+    .news-image-home{
+        width: 100%;
+    }
+    .news-short-description{
+        overflow: inherit;
+    }
+}

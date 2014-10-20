@@ -29,11 +29,11 @@
 			<action method="addCss"><stylesheet>css/local.css</stylesheet></action>
 			<action method="addCss"><stylesheet>css/cloud-zoom.css</stylesheet></action>
 			<action method="addCss"><stylesheet>css/animation.css</stylesheet></action>
-
             <action method="addItem"><type>js</type><name>codevog/html5shiv.js</name><params/><if>lt IE 9</if></action>
 			<!--<action method="addJs"><script>codevog/jquery-1.7.2.min.js</script></action>-->
 			<action method="addJs"><script>codevog/jquery.hoverIntent.min.js</script></action>
 			<action method="addItem"><type>skin_js</type><script>js/script.js</script></action>
+            <action method="addItem"><type>skin_js</type><script>js/classie.js</script></action>
             <!--<action method="addItem"><type>skin_js</type><script>js/custom_select.js</script></action>-->
 
             <action method="addCss">
@@ -79,7 +79,8 @@
                 <type>skin_js</type>
                 <path>js/jquery.placeholder.min.js</path>
             </action>
-
+            <action method="addCss"><stylesheet>css/mobmenu.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/responsive.css</stylesheet></action>
 
 		</reference>
 
@@ -271,5 +272,7 @@
             <action method="addJs"><script>codevog/cloud-zoom.1.0.2.min.js</script></action>
         </reference>
 	</review_product_list>
+
+
 
 </layout>
