@@ -12,20 +12,138 @@ html {
 
 /* Portrait tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
+    #slideshow{
+        min-height: 460px;
+    }
+
 
 }
 
 /* Portrait tablets and small desktops */
 @media (min-width: 768px) and (max-width: 991px) {
+    header,
+    .wrapper,
+    .main-shadow,
+    .main,
+    .white-container,
+    footer,
+    footer .footer-subscribe{
+        height: auto !important;
+        min-height: 100%;
+        min-width: inherit;
+        width: 100%;
+    }
 
-}
 
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-    .main-shadow{
+
+    .str-spmenu-vertical{
+        width: inherit;
+    }
+
+    header .logo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .wrapper .nav>li>a{
+        padding: 0px 11px;
+        font-size: 13px;
+    }
+
+    #slideshow{
+        min-height: 460px;
+    }
+
+    .jcarousel-skin-tango .jcarousel-clip-horizontal {
+        width: 716px;
+    }
+
+    header .links{
+        padding-right: 20px;
+    }
+
+    header .links .separator{
+        display: none;
+    }
+    header .links li{
+        display: block;
+        line-height: 17px;
+    }
+    header .links li a{
+     display: block;
+    }
+
+
+
+    .news-image-home{
+        float: none;
+    }
+
+    .news li {
+        float: left;
+        width: 46%;
+        margin-right: 25px;
+    }
+    .nav>li>div.sub-wrapper>ul>li{
+        width: 30%;
+    }
+
+    .nav>li>div.sub-wrapper{
+        width: 100%;
+    }
+
+
+
+    footer .footer-subscribe form,
+    footer .footer-subscribe .description,
+    .wrapper footer .footer-subscribe .title{
+
+        width: inherit;
+    }
+
+
+    footer .footer-subscribe .description{
+        margin-bottom: 21px;
+        width: 40%;
+    }
+
+    footer{
+        float: left;
+        overflow: hidden;
+    }
+
+    footer ul.links{
+        margin-right: 15px;
+    }
+
+    footer ul.links li.separator{
+        margin: 0 2px;
 
     }
 
+
+    .col-main, .col-main-left, .col-main-right{
+        width: 70%;
+    }
+}
+
+
+@media(max-width: 860px) and (min-width: 768px) {
+    .col-main, .col-main-left, .col-main-right{
+        width: 65%;
+    }
+}
+
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .col-main,
+    .col-main-left,
+    .col-main-right,
     header,
     .wrapper,
     .main-shadow,
@@ -61,12 +179,103 @@ html {
 
     .news li{
         width: 100%;
+        margin-bottom: 20px;
     }
 
     .news li img {
         margin: 8px 8px 8px 0;
     }
+
+    #slideshow{
+        min-height: 360px;
+    }
+
+    .jcarousel-container-horizontal{
+        width: 477px;
+    }
+
+    footer .footer-subscribe form,
+    footer .footer-subscribe .description,
+    .wrapper footer .footer-subscribe .title{
+        float: none;
+        width: inherit;
+    }
+
+    footer .footer-subscribe .description{
+        margin-bottom: 21px;
+        width: 50%;
+    }
+
+    footer{
+        float: left;
+        overflow: hidden;
+    }
+
+    footer ul.links{
+        margin-right: 15px;
+        display: inline;
+        width: 50%;
+    }
+
+    footer ul li{
+        margin-left: 10px;
+    }
+
+    footer ul.links li.separator{
+        margin: 0 5px;
+    }
+
+
 }
+
+
+
+@media (min-width: 480px) and (max-width: 767px) {
+    #slideshow{
+        min-height: 360px;
+    }
+    .jcarousel-container-horizontal{
+        width: 477px;
+    }
+
+
+}
+
+
+@media (min-width: 480px) and (max-width: 667px) {
+    #slideshow{
+        min-height: 290px;
+    }
+
+    .jcarousel-clip-horizontal{
+        width: 430px;
+    }
+
+
+    .slider-container .jcarousel-list .product-image,
+    .product-image img{
+        width: 210px;
+        height: 221px;
+    }
+    .jcarousel-skin-tango .jcarousel-item{
+        width: 210px;
+    }
+
+    .slider-container .jcarousel-list .info{
+        width: 159px;
+    }
+
+    .slider-container .jcarousel-list .product-image em {
+        left: 10px;
+        top: 177px;
+    }
+
+    .news{
+        padding: 0 15px;
+    }
+
+}
+
 
 /* Landscape phones and smaller */
 @media (max-width: 480px) {
@@ -77,5 +286,117 @@ html {
     }
     .news-short-description{
         overflow: inherit;
+    }
+
+    #slideshow{
+        min-height: 260px;
+    }
+
+
+    .slideshow ul li strong > span{
+        font-size: 38px;
+    }
+
+    .slideshow ul li strong > span > span{
+        font-size: 23px;
+    }
+
+    .slideshow ul li strong{
+        margin: 0 25px;
+        top: 118px;
+    }
+
+
+
+
+
+    .jcarousel-clip-horizontal{
+        width: 238px;
+    }
+
+
+    .slider-container .jcarousel-list .product-image,
+    .product-image img{
+        width: 238px;
+        height: 221px;
+    }
+    .jcarousel-skin-tango .jcarousel-item{
+        width: 238px;
+    }
+
+    .slider-container .jcarousel-list .info{
+        width: 159px;
+    }
+
+    .slider-container .jcarousel-list .product-image em {
+        left: 10px;
+        top: 177px;
+    }
+
+    footer ul.links{
+        float: none;
+        margin: 25px;
+        display: block;
+    }
+
+    footer .links li{
+        display: block;
+        margin-left: 0;
+        line-height: 20px;
+    }
+    footer .links li.separator{
+        display: none;
+    }
+    .news{
+        padding: 0 15px;
+    }
+    .news li img {
+        width: 100%;
+    }
+}
+
+
+/* Landscape phones and smaller */
+@media (max-width: 360px) {
+    #slideshow {
+        min-height: 157px;
+    }
+
+    .slideshow ul li strong{
+        display: none !important;
+    }
+
+    .slideshow ul li strong  span{
+        font-size: 24px;
+    }
+
+    footer .footer-subscribe .subscribe-input input{
+        width: 105px;
+    }
+
+    .jcarousel-container-horizontal{
+        width: 238px;
+    }
+
+    .slider-container {
+        position: relative;
+        padding: 28px 0px 30px;
+    }
+
+    .jcarousel-skin-tango .jcarousel-item,
+    .jcarousel-clip-horizontal {
+        width: 271px;
+    }
+
+    .slider-container .jcarousel-list .product-image, .product-image img {
+        width: 267px;
+        height: 283px;
+    }
+
+    .news li img {
+        width: 100%;
+    }
+    .news{
+        padding: 0 15px;
     }
 }

@@ -78,24 +78,26 @@
          hBlock();
     };
 
-    window.onresize = function(event) {
+    jQuery(window).resize(function(){
         hBlock();
         wBlock();
-    };
+    })
 
 
     function hBlock() {
         var h = jQuery(window).height(),
             menu = jQuery('.str-spmenu-open');
-        if(menu.is(':visible')){
             menu.height(h);
-        } else {
-            menu.removeAttr('style');
-        }
     };
 
 
-    function hBlock(){
+    function wBlock(){
+        var w = classie.viewport().width;
+        if(w >= 769){
+            jQuery('#mobmenu').removeAttr('style');
+            classie.remove( body, 'str-spmenu-push-toright' );
+            classie.remove( menuLeft, 'str-spmenu-open' );
+        }
 
     };
 

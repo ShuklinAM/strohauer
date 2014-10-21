@@ -85,7 +85,9 @@
 
 		</reference>
 
-		<!-- add currency and cart block in header -->
+
+
+     		<!-- add currency and cart block in header -->
 		<reference name="header">
             <block type="cms/block" name="template_logo" as="templateLogo">
                 <action method="setBlockId"><block_id>template_logo</block_id></action>
@@ -180,7 +182,16 @@
 			<action method="unsetChild"><alias>catalog.leftnav</alias></action>
 			<action method="insert"><blockName>catalog.leftnav</blockName><sublingName></sublingName><after>0</after></action>
 		</reference>
+
 	</catalog_category_layered>
+
+
+    <catalog_category_view>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/responsive-catalog.css</stylesheet></action>
+        </reference>
+    </catalog_category_view>
+
 
 	<catalogsearch_result_index translate="label">
 		<reference name="root">

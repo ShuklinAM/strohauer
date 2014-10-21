@@ -17,7 +17,7 @@
         margin-bottom: 30px;
     }
     .main {
-        width: auto;
+        width: 100%;
         min-width: 962px;
         padding: 15px;
     }
@@ -46,7 +46,6 @@
     }
     .main {
         width: auto;
-        min-width: 738px;
         padding: 15px;
     }
     .main-shadow {
@@ -170,7 +169,7 @@
     color: #7c7676;
 }
 .more-views ul > li {
-    width: 23.25%;
+    width: 23%;
     padding: 0;
     margin-left: 1%;
 }

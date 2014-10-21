@@ -86,11 +86,11 @@ font-weight: 400;
     margin-right: 15px;
     margin-left: 15px;
     margin-bottom: 8px;
-    background-color: transparent;
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
     margin: 8px auto;
+    background-color: #4f0016;
 }
 
 .sr-only {
@@ -105,7 +105,7 @@ font-weight: 400;
 }
 
 .navbar-toggle .icon-bar {
-    background-color: #fff;
+    background-color: #FFF;
     display: block;
     width: 22px;
     height: 2px;
@@ -132,6 +132,11 @@ font-weight: 400;
 /*//menu animate btn*/
 .str-spmenu-push-toright .menu-container{
     text-align: left;
+}
+
+#showLeftPush{
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
@@ -176,7 +181,7 @@ font-weight: 400;
     }
 
 
-    .links li{
+    header.links li{
         display: block;
     }
 

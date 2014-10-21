@@ -57,11 +57,12 @@
 		    <div class="main-shadow">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
+
+	            <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
                 <div class="col-main">
                     <?php echo $this->getChildHtml('global_messages') ?>
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
-	            <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
             </div>
             </div>
 		    <?php echo $this->getChildHtml('footer') ?>
