@@ -7,42 +7,29 @@
             $columnCounter = 0;
         ?>
 
-        <?php foreach($categories as $category):?>
+        <ul class="list-categories">
+            <?php foreach($categories as $category):?>
 
-            <?php $category = Mage::getModel('catalog/category')->load($category->getId());?>
+                <?php $category = Mage::getModel('catalog/category')->load($category->getId());?>
 
-            <?php ++$columnCounter;?>
+                <?php ++$columnCounter;?>
 
-            <?php if($columnCounter == 1):?>
-                <ul class="products-grid">
-            <?php endif;?>
 
-            <li class="item <?php if($columnCounter == 1):?>first<?php elseif($columnCounter == $columns):?>last<?php endif;?>">
-                <a href="<?php echo $category->getUrl();?>" class="product-image">
-                    <img width="234" height="240" alt="<?php echo $category->getName();?>" src="<?php echo $this->getCategoryImageUrl($category);?>">
-                    <em><?php echo $this->__('Details');?></em>
-                    <span></span>
-                </a>
+                <li class="item <?php if($columnCounter == 1):?>first<?php elseif($columnCounter == $columns):?>last<?php endif;?>">
+                    <a href="<?php echo $category->getUrl();?>" class="category-img">
+                        <img alt="<?php echo $category->getName();?>" src="<?php echo $this->getCategoryImageUrl($category);?>">
+                    </a>
 
-                <div class="info">
-                    <h2 class="product-name">
-                        <a title="<?php echo $category->getName();?>" href="<?php echo $category->getUrl();?>">
-                            <?php echo $category->getName();?>
-                        </a>
-                    </h2>
-                </div>
-            </li>
-
-            <?php if($columnCounter == $columns):?>
-                <?php $columnCounter = 0;?>
-                </ul>
-            <?php endif;?>
-
-        <?php endforeach;?>
-
-        <?php if($columnCounter != 0):?>
-            </ul>
-        <?php endif;?>
+                    <div class="info">
+                        <h2 class="category-name">
+                            <a title="<?php echo $category->getName();?>" href="<?php echo $category->getUrl();?>">
+                                <?php echo $category->getName();?>
+                            </a>
+                        </h2>
+                    </div>
+                </li>
+            <?php endforeach;?>
+        </ul>
 
     </div>
 

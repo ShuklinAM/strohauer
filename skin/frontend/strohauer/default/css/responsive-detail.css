@@ -150,18 +150,6 @@
     .product-view .add-to-cart button.button span {
         width: 100%;
     }
-    .more-views ul > li {
-        width: 23.25%;
-        padding: 0;
-        margin-left: 1%;
-    }
-    .more-views ul > li.first-child {
-        margin-left: 0;
-    }
-    .more-views ul li img {
-        width: 100%;
-        height: auto;
-    }
     .product-options dd input.input-text {
         width: 96%;
         padding: 0 2%;
@@ -180,4 +168,43 @@
 .custom-select .custom-text, .custom-select.disable span.custom-text:hover {
     background: #28000b;
     color: #7c7676;
+}
+.list-categories li {
+    position: relative;
+    margin-bottom: 30px;
+}
+.list-categories li a {
+    display: block;
+}
+.list-categories li a img {
+    width: 100%;
+    height: auto;
+}
+.list-categories li .info {
+    position: absolute;
+    top: 20px;
+    width: 230px;
+}
+.list-categories li:nth-child(odd) .info {
+    right: 20px;
+    text-align: right;
+}
+.list-categories li:nth-child(even) .info {
+    left: 20px;
+    text-align: left;
+}
+.list-categories li .info .category-name {
+    font-size: 20px;
+}
+.more-views ul > li {
+    width: 23.25%;
+    padding: 0;
+    margin-left: 1%;
+}
+.more-views ul > li.first-child {
+    margin-left: 0;
+}
+.more-views ul li img {
+    width: 100%;
+    height: auto;
 }
