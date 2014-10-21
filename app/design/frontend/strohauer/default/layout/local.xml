@@ -81,7 +81,7 @@
             </action>
             <action method="addCss"><stylesheet>css/mobmenu.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/responsive.css</stylesheet></action>
-            <action method="addCss"><stylesheet>css/responsive-detail.css</stylesheet></action>
+
 
 		</reference>
 
@@ -223,6 +223,7 @@
 
         <reference name="head">
             <action method="addJs"><script>codevog/cloud-zoom.1.0.2.min.js</script></action>
+            <action method="addCss"><stylesheet>css/responsive-detail.css</stylesheet></action>
         </reference>
 
 		<reference name="right">

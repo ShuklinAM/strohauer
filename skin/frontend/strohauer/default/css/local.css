@@ -1703,4 +1703,33 @@ text-align:center;
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
-} 
+}
+
+/*List Categories Page*/
+.list-categories li {
+    position: relative;
+    margin-bottom: 30px;
+}
+.list-categories li a {
+    display: block;
+}
+.list-categories li a img {
+    width: 100%;
+    height: auto;
+}
+.list-categories li .info {
+    position: absolute;
+    top: 20px;
+    width: 230px;
+}
+.list-categories li:nth-child(odd) .info {
+    right: 20px;
+    text-align: right;
+}
+.list-categories li:nth-child(even) .info {
+    left: 20px;
+    text-align: left;
+}
+.list-categories li .info .category-name {
+    font-size: 20px;
+}
