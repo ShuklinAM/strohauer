@@ -1,0 +1,68 @@
+/*!_____________________________________*/
+
+@media (min-width: 1200px) {
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .wrapper {
+        min-width: 992px;
+    }
+    .main {
+        width: auto;
+        min-width: 962px;
+        padding: 15px;
+    }
+    .main-shadow {
+        width: 100%;
+    }
+    .col2-left-layout .col-main {
+        width: 752px;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .wrapper {
+        min-width: 768px;
+    }
+    .main {
+        width: auto;
+        min-width: 738px;
+        padding: 15px;
+    }
+    .main-shadow {
+        width: 100%;
+    }
+    .dashboard .box-recent,
+    .sales-order-history .my-account,
+    .wishlist-index-index .my-wishlist {
+        overflow-x: scroll;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .main {
+        padding: 15px;
+        width: auto;
+    }
+    .col2-left-layout .col-main {
+
+    }
+    .dashboard .box-recent,
+    .sales-order-history .my-account,
+    .wishlist-index-index .my-wishlist {
+        overflow-x: scroll;
+    }
+    .col-left {
+        margin: 0 auto;
+        float: none;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+
+}

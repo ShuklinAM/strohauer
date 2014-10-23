@@ -25,7 +25,7 @@
  */
 $config = Mage::getStoreConfig('templatesettings/templatesettings_appearance');
 ?>
-<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
 <title><?php echo $this->getTitle() ?></title>
 <meta content='width=device-width, initial-scale=0.8,  maximum-scale=0.8, user-scalable=no' name='viewport'>
@@ -34,6 +34,9 @@ $config = Mage::getStoreConfig('templatesettings/templatesettings_appearance');
 <meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
 <link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
 <link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $this->getSkinUrl('images/strohauer-touch-114.png'); ?>">
+<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $this->getSkinUrl('images/strohauer-touch-72.png'); ?>">
+<link rel="apple-touch-icon" href="<?php echo $this->getSkinUrl('images/strohauer-touch-57.png'); ?>">
 <link href='//fonts.googleapis.com/css?family=<?php echo str_replace(' ', '+', $config['font']); ?>:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
 <!--[if lt IE 7]>
 <script type="text/javascript">

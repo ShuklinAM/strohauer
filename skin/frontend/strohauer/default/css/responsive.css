@@ -15,7 +15,23 @@ html {
     #slideshow{
         min-height: 460px;
     }
-
+    .contacts-index-index .wrapper,
+    .customer-account-login .wrapper{
+        min-width: 992px;
+    }
+    .contacts-index-index .main,
+    .customer-account-login .main {
+        width: auto;
+        min-width: 962px;
+        padding: 15px;
+    }
+    .contacts-index-index .main-shadow,
+    .customer-account-login .main-shadow {
+        width: 100%;
+    }
+    .contacts-index-index .col2-right-layout .col-main {
+        width: 75%;
+    }
 
 }
 
@@ -129,6 +145,20 @@ html {
     .col-main, .col-main-left, .col-main-right{
         width: 70%;
     }
+    .contacts-index-index .wrapper,
+    .customer-account-login .wrapper {
+        min-width: 768px;
+    }
+    .contacts-index-index .main,
+    .customer-account-login .main {
+        width: auto;
+        min-width: 738px;
+        padding: 15px;
+    }
+    .contacts-index-index .main-shadow,
+    .customer-account-login .main-shadow {
+        width: 100%;
+    }
 }
 
 
@@ -224,7 +254,15 @@ html {
     footer ul.links li.separator{
         margin: 0 5px;
     }
-
+    .contacts-index-index .main,
+    .customer-account-login .main {
+        padding: 15px;
+        width: auto;
+    }
+    .contacts-index-index .col-right {
+        margin-top: 0;
+        float: left;
+    }
 
 }
 
@@ -274,6 +312,18 @@ html {
         padding: 0 15px;
     }
 
+}
+
+@media (max-width: 600px) {
+    .account-login .first-col .new-users {
+        display: none;
+    }
+    .account-login .first-col .registered-users {
+        width: 100%;
+    }
+    .wrapper .account-login button.button span {
+        padding: 0 10px;
+    }
 }
 
 
@@ -352,6 +402,15 @@ html {
     }
     .news li img {
         width: 100%;
+    }
+    .contacts-index-index .form-list .fields > div.field {
+        float: none !important;
+        clear: both;
+        width: 100%;
+    }
+    .contacts-index-index .form-list li > .input-box input {
+        width: 96%;
+        padding: 0 2%;
     }
 }
 

@@ -17,7 +17,7 @@
         margin-bottom: 30px;
     }
     .main {
-        width: 100%;
+        width: auto;
         min-width: 962px;
         padding: 15px;
     }
@@ -78,6 +78,7 @@
     .designer_wrap_result {
         float: none;
         clear: both;
+        margin: 0 auto;
     }
     .product-view .product-img-box {
         margin-bottom: 30px;
@@ -88,16 +89,14 @@
     }
     .col1-layout .product-view .product-shop {
         width: 49%;
-        margin: 0 0 30px 1%;
         float: right;
     }
-}
-
-/* Landscape phones and smaller */
-@media (max-width: 480px) {
-    .col1-layout .product-view .product-shop,
     .col1-layout .product-view .product-img-box {
         width: 100%;
+        float: none;
+        clear: both;
+    }
+    .col1-layout .product-view .product-shop {
         float: none;
         clear: both;
     }
@@ -107,15 +106,16 @@
         padding: 0;
         width: auto;
     }
-    .designer_wrap,
-    .designer_wrap_result {
-        width: auto;
-    }
+
     .col1-layout .product-view .product-shop {
-        margin-left: 0;
+        margin: 0 auto;
+        margin-bottom: 30px;
     }
     .product-tabs {
+        max-width: 274px;
         position: relative;
+        margin: 0 auto;
+        margin-top: 30px;
     }
     .product-tabs li {
         float: none;
@@ -128,7 +128,9 @@
         border: 1px solid #9a1212;
     }
     .product-tabs-content {
-        margin-top: 0;
+        margin: 0 auto;
+        max-width: 234px;
+        padding: 20px;
     }
     .new_designer_img {
         width: auto;
@@ -151,7 +153,28 @@
     }
     .product-options dd input.input-text {
         width: 96%;
-        padding: 0 2%;
+        padding: 0 2% !important;
+    }
+    .cloud-zoom-big {
+        left: 0 !important;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+    .designer_wrap,
+    .designer_wrap_result {
+        width: auto;
+    }
+    .col1-layout .product-view .product-shop,
+    .col1-layout .product-view .product-img-box {
+        width: 100%;
+        float: none;
+        clear: both;
+    }
+    .product-tabs,
+    .product-tabs-content {
+        max-width: none;
     }
 }
 
