@@ -64,6 +64,6 @@ jQuery(function($){
         }
     );
 
-    $('ul.nav').flexMenu();
+
 
 });
