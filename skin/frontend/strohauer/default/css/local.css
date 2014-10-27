@@ -575,7 +575,7 @@ nav { width: 1010px; margin: 0 auto; position: relative;}
 .nav ul ul:before { content: ""; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-right: 5px solid #9a1212; position: absolute; margin:0px 0 0 -24px; }
 
 .nav ul li { float:none; border-bottom:1px solid #242424; width:222px; line-height: 37px; position:relative; }
-.nav ul li.last { border-bottom:0; margin: 0 !important; }
+.nav ul li.last {margin: 0 !important; }
 .nav ul li a { float:none; padding:0 13px; font-family: Arial, serif; font-weight:normal; color:#969696 !important; background: none; }
 .nav ul li a:hover { background: #181818;color:#fff !important; }
 .nav ul li.active > a,
@@ -1823,3 +1823,30 @@ ul.nav {
     margin-top: 5px;
     margin-right: 5px;
 }
+
+#scroller {
+	background: url("../images/totop.png");
+	width: 62px;
+	height: 45px;
+	cursor: pointer;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	display: none;
+	z-index: 999;
+}
+.nav li ul li div.shown-sub {
+	right: 100%;
+	left: auto;
+	top: 0;
+	padding: 0;
+}
+.nav li ul li div.sub-wrapper ul {
+	border: 0;
+	padding: 0;
+	
+}
+.nav li ul li div.sub-wrapper ul:before {
+	display: none;
+}
+

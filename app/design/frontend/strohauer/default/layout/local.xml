@@ -35,7 +35,7 @@
 			<action method="addItem"><type>skin_js</type><script>js/script.js</script></action>
             <action method="addItem"><type>skin_js</type><script>js/classie.js</script></action>
             <!--<action method="addItem"><type>skin_js</type><script>js/custom_select.js</script></action>-->
-
+	     <action method="addItem"><type>skin_js</type><script>js/totop.js</script></action>
             <action method="addCss">
                 <path>css/ism/ism.customInputs.css</path>
             </action>

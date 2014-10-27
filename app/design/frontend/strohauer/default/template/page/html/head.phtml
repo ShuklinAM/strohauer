@@ -34,9 +34,17 @@ $config = Mage::getStoreConfig('templatesettings/templatesettings_appearance');
 <meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
 <link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
 <link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+
+<link rel="apple-touch-icon" sizes="152x152" href="<?php echo $this->getSkinUrl('images/strohauer-touch-152.png'); ?>">
+<link rel="apple-touch-icon" sizes="144x144" href="<?php echo $this->getSkinUrl('images/strohauer-touch-144.png'); ?>">
+<link rel="apple-touch-icon" sizes="120x120" href="<?php echo $this->getSkinUrl('images/strohauer-touch-120.png'); ?>">
 <link rel="apple-touch-icon" sizes="114x114" href="<?php echo $this->getSkinUrl('images/strohauer-touch-114.png'); ?>">
+<link rel="apple-touch-icon" sizes="76x76" href="<?php echo $this->getSkinUrl('images/strohauer-touch-76.png'); ?>">
 <link rel="apple-touch-icon" sizes="72x72" href="<?php echo $this->getSkinUrl('images/strohauer-touch-72.png'); ?>">
 <link rel="apple-touch-icon" href="<?php echo $this->getSkinUrl('images/strohauer-touch-57.png'); ?>">
+<meta name="msapplication-TileImage" content="<?php echo $this->getSkinUrl('images/strohauer-touch-144.png'); ?>">
+
+
 <link href='//fonts.googleapis.com/css?family=<?php echo str_replace(' ', '+', $config['font']); ?>:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
 <!--[if lt IE 7]>
 <script type="text/javascript">
