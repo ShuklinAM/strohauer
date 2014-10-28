@@ -1850,3 +1850,13 @@ ul.nav {
 	display: none;
 }
 
+.zutaten-popup {
+    display: none;
+    position: absolute;
+    background-color: #4F0016;
+    border: 1px solid #9A1212;
+    padding: 20px;
+    margin-left: 125px;
+    margin-top: -15px;
+    z-index: 99;
+}

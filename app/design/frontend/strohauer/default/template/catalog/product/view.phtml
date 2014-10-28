@@ -85,6 +85,45 @@
             </div>
             <?php endif;?>
 
+            <?php $code = 'zutaten';?>
+            <?php if($zutaten = $_product->getData($code)):?>
+                <div class="short-description">
+                    <div class="std">
+                        <strong><?php echo $this->__('Zutaten');?></strong>
+                        <a href="#" onclick="showZutaten(); return false;" id="<?php echo $code;?>Link">(<?php echo $this->__('mehr Infos');?>)</a>
+                    </div>
+                    <div class="zutaten-popup" id="<?php echo $code;?>">
+                        <?php echo $_helper->productAttribute($_product, $zutaten, $code); ?>
+                    </div>
+                </div>
+                <script type="text/javascript">
+
+                    jQuery(document).ready(function()
+                    {
+                        jQuery(document).click(function()
+                        {
+                            jQuery('#<?php echo $code;?>').hide();
+                        });
+
+                        jQuery('#<?php echo $code;?>, #<?php echo $code;?>Link').click(function(e)
+                        {
+                            e.stopPropagation();
+                        })
+                    });
+
+                    function showZutaten()
+                    {
+                        var tooltip = jQuery('#<?php echo $code;?>');
+
+                        if(tooltip.is(':hidden'))
+                            tooltip.show();
+                        else
+                            tooltip.hide();
+                    }
+
+                </script>
+            <?php endif;?>
+
             <div class="product_wrap">
                 <?php echo $this->getChildHtml('other');?>
 
