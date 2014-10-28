@@ -25,14 +25,26 @@
  */
 $config = Mage::getStoreConfig('templatesettings/templatesettings_appearance');
 ?>
-<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
 <title><?php echo $this->getTitle() ?></title>
+<meta content='width=device-width, initial-scale=0.8,  maximum-scale=0.8, user-scalable=no' name='viewport'>
 <meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
 <meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
 <meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
 <link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
 <link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+
+<link rel="apple-touch-icon" sizes="152x152" href="<?php echo $this->getSkinUrl('images/strohauer-touch-152.png'); ?>">
+<link rel="apple-touch-icon" sizes="144x144" href="<?php echo $this->getSkinUrl('images/strohauer-touch-144.png'); ?>">
+<link rel="apple-touch-icon" sizes="120x120" href="<?php echo $this->getSkinUrl('images/strohauer-touch-120.png'); ?>">
+<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $this->getSkinUrl('images/strohauer-touch-114.png'); ?>">
+<link rel="apple-touch-icon" sizes="76x76" href="<?php echo $this->getSkinUrl('images/strohauer-touch-76.png'); ?>">
+<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $this->getSkinUrl('images/strohauer-touch-72.png'); ?>">
+<link rel="apple-touch-icon" href="<?php echo $this->getSkinUrl('images/strohauer-touch-57.png'); ?>">
+<meta name="msapplication-TileImage" content="<?php echo $this->getSkinUrl('images/strohauer-touch-144.png'); ?>">
+
+
 <link href='//fonts.googleapis.com/css?family=<?php echo str_replace(' ', '+', $config['font']); ?>:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
 <!--[if lt IE 7]>
 <script type="text/javascript">
@@ -65,7 +77,7 @@ footer .footer-subscribe .title,
 #product-customer-reviews .review-title, .add-review h3.title, 
 #customer-reviews .form-add h2, #customer-reviews .form-add h3, #customer-reviews .form-add h4, #customer-reviews dt a,
 .product-view .box-tags .form-add label,
-#nav>li>a, #nav li.menu-category-description strong, #nav li.menu-category-description a { font-family: '<?php echo $config['font']; ?>', sans-serif; font-weight: 400; }
+.nav>li>a, .nav li.menu-category-description strong, .nav li.menu-category-description a { font-family: '<?php echo $config['font']; ?>', sans-serif; font-weight: 400; }
 
 /********** update theme color */
 #slide-timeline,
@@ -98,19 +110,19 @@ footer .footer-subscribe button.button span,
 #search_mini_form .form-search button:hover,
 .light #search_mini_form .form-search button:hover,
 .pager .pages li a.next:hover, .pager .pages li a.previous:hover,
-#nav>li>a:hover,
-#nav>li.over>a,
-#nav>li.active>a,
-#nav li.menu-category-description a,
-#nav li.menu-category-description button.button span,
-#nav li.menu-category-description a:hover { background-color:<?php echo $config['color']; ?>; }
+.nav>li>a:hover,
+.nav>li.over>a,
+.nav>li.active>a,
+.nav li.menu-category-description a,
+.nav li.menu-category-description button.button span,
+.nav li.menu-category-description a:hover { background-color:<?php echo $config['color']; ?>; }
 
 .top-border,
-#nav ul,
-#nav div.sub-wrapper { border-top-color: <?php echo $config['color']; ?>; }
-#nav ul div, #nav ul ul,
-.light #nav ul div, .light #nav ul ul, #nav div.sub-wrapper ul div.sub-wrapper{ border-left-color: <?php echo $config['color']; ?>;}
-#nav ul ul:before { border-right-color: <?php echo $config['color']; ?>; }
+.nav ul,
+.nav div.sub-wrapper { border-top-color: <?php echo $config['color']; ?>; }
+.nav ul div, .nav ul ul,
+.light .nav ul div, .light .nav ul ul, .nav div.sub-wrapper ul div.sub-wrapper{ border-left-color: <?php echo $config['color']; ?>;}
+.nav ul ul:before { border-right-color: <?php echo $config['color']; ?>; }
 .opc .active .step-title:hover { border-color: <?php echo $config['color']; ?>; }
 .products-list .price,
 #shopping-cart-table a{ color: <?php echo $config['color']; ?>; }

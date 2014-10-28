@@ -1,0 +1,103 @@
+/*!_____________________________________*/
+
+@media (min-width: 1200px) {
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .wrapper {
+        min-width: 992px;
+    }
+    .main {
+        width: auto;
+        min-width: 962px;
+        padding: 15px;
+    }
+    .main-shadow {
+        width: 100%;
+    }
+    .form-list .input-box,
+    #checkout-step-login input.input-text {
+        width: 100%;
+    }
+    .col-right {
+        width: 23%;
+        margin-left: 0;
+    }
+    .col2-right-layout .col-main {
+        width: 76%;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .wrapper {
+        min-width: 768px;
+    }
+    .main {
+        width: auto;
+        min-width: 738px;
+        padding: 15px;
+    }
+    .main-shadow {
+        width: 100%;
+    }
+    .form-list .input-box,
+    #checkout-step-login input.input-text {
+        width: 100%;
+    }
+    .col-right {
+        margin-top: 64px;
+        width: 27%;
+        margin-left: 0;
+    }
+    .col2-right-layout .col-main {
+        width: 72%;
+    }
+    .opc .form-list li.wide .input-box {
+        width: 254px;
+    }
+    .opc .custom-select .custom-text {
+        width: 100% !important;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .main {
+        padding: 15px;
+        width: auto;
+    }
+    .form-list .input-box,
+    #checkout-step-login input.input-text {
+        width: 100%;
+    }
+    .col-right {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .opc .form-list li.wide .input-box {
+        width: 254px;
+    }
+    .opc .custom-select .custom-text {
+        width: 254px !important;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+    .opc .step-title h2 {
+        line-height: 59px;
+        text-align: left;
+        float: left;
+        zoom: 0.8;
+    }
+    #checkout-review-table-wrapper {
+        overflow-x: scroll;
+    }
+}
+
+.col-right {
+    margin-top: 64px;
+}

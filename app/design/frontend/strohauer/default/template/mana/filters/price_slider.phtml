@@ -1,3 +1,6 @@
+<?php $category = Mage::registry('current_category');?>
+
+<?php if(!$category || $category->getDisplayMode() != 'PAGE'):?>
 <dt><?php echo $this->__('Price') ?></dt>
 <dd>
     <b class="left-price"><?php echo Mage::helper('core')->currency($this->_minPrice, true, false);?></b>
@@ -19,3 +22,4 @@
 
     </script>
 </dd>
+<?php endif;?>

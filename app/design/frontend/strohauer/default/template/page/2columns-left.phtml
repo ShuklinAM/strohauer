@@ -39,7 +39,7 @@
 <head>
 	<?php echo $this->getChildHtml('head') ?>
 </head>
-<body class="<?php echo Mage::getStoreConfig('templatesettings/templatesettings_appearance/width') . ' ' . Mage::getStoreConfig('templatesettings/templatesettings_appearance/style'); echo $this->getBodyClass()?' '.$this->getBodyClass().'':'' ?>">
+<body class="str-spmenu-push <?php echo Mage::getStoreConfig('templatesettings/templatesettings_appearance/width') . ' ' . Mage::getStoreConfig('templatesettings/templatesettings_appearance/style'); echo $this->getBodyClass()?' '.$this->getBodyClass().'':'' ?>">
 
 <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
      chromium.org/developers/how-tos/chrome-frame-getting-started -->
@@ -57,11 +57,12 @@
 		    <div class="main-shadow">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
+
+	            <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
                 <div class="col-main">
                     <?php echo $this->getChildHtml('global_messages') ?>
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
-	            <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
             </div>
             </div>
 		    <?php echo $this->getChildHtml('footer') ?>

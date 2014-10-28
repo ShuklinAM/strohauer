@@ -1,0 +1,150 @@
+
+
+@media (min-width: 1200px) {
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .list-categories li a img {
+        width: 100%;
+        height: 100%;
+    }
+
+  .col-main{
+
+  }
+    .main {
+       width: 992px;
+        padding: 0px;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .category-image img,
+    .list-categories li a img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .main {
+        width: auto;
+        padding: 15px;
+    }
+}
+
+
+
+
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .list-categories li a img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .main {
+        width: auto;
+        padding: 15px;
+    }
+
+    .col-left{
+        width: 100%;
+    }
+
+    .slider.slider-horizontal{
+      width: 98% !important;
+    }
+
+    .block .block-content li {
+        line-height: 30px;
+        color: #fff;
+        font-size: 15px;
+        background-color: rgba(0, 0, 0, 0.10);
+    }
+    .block-layered-nav dt {
+        margin: 23px 0 16px;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 200;
+    }
+
+    .block-layered-nav dd li{
+        background-position: 10px 12px;
+    }
+    .block-layered-nav dd li:hover{
+        background-position: 13px 12px;
+    }
+
+    .block .block-title strong span{
+        font-size: 27px;
+    }
+
+
+}
+
+
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+}
+
+
+@media (min-width: 480px) and (max-width: 667px) {
+    .slider-container .jcarousel-list .product-image, .product-image img{
+        width: inherit;
+        height: inherit;
+    }
+
+}
+
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+    .products-grid .product-image,
+    .products-grid li.item{
+        float: none;
+        width: auto;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        min-height: 290px;
+    }
+
+    .products-grid .product-image{
+
+    }
+
+    .slider-container .jcarousel-list .product-image,
+    .product-image img,
+    .category-image img{
+        width: 100%;
+        height: auto;
+    }
+
+    .products-grid .product-image em {
+        top: 90%;
+    }
+
+    .sorter .limiter {
+        float: left;
+        line-height: 30px;
+        margin-top: 20px;
+        margin-right: 16px;
+    }
+}
+
+
+/* Landscape phones and smaller */
+@media (max-width: 360px) {
+    .slider-container .jcarousel-list .product-image,
+    .product-image img,
+    .category-image img{
+        width: 100%;
+        height: auto;
+    }
+
+}

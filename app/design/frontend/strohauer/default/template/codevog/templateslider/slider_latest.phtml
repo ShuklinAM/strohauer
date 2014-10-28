@@ -42,12 +42,33 @@ jQuery(document).ready(function($) {
 	    });
 	}
 
-    $('#template_carousel').jcarousel({
-	    scroll: 1,
-    	initCallback: mycarousel_initCallback,
-	    buttonNextHTML: null,
-	    buttonPrevHTML: null
-    });
+    var jcarousel =  $('#template_carousel');
+
+    jcarousel
+        .on('jcarousel:reload jcarousel:create', function () {
+            var width = jcarousel.innerWidth();
+
+            if (width >= 600) {
+                width = width / 3;
+            } else if (width >= 350) {
+                width = width / 2;
+            }
+
+            jcarousel.jcarousel('items').css('width', width + 'px');
+        })
+        .jcarousel({
+            wrap: 'circular',
+            scroll: 1,
+            initCallback: mycarousel_initCallback,
+            buttonNextHTML: null,
+            buttonPrevHTML: null
+        });
+    jQuery(window).resize(function(){
+        jcarousel.jcarousel('reload');
+        jcarousel.jcarousel('scroll', 0);
+    })
+
+
 });
 </script>
 <?php endif; ?>

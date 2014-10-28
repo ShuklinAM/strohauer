@@ -43,8 +43,9 @@ jQuery(window).load(function(){
     var $ = jQuery;
 	var slideshowPause = false;
 	var config = {
-		width: $('#slideshow').width(),
-		height: $('#slideshow').height(),
+//		width: $('#slideshow').width(),
+//		height: $('#slideshow').height(),
+        width: 'fit',
 		interval: <?php echo $config["interval"];?>,
 		speed: <?php echo $config["speed"];?>,
 		fadeSpeed: <?php echo $config["fade_speed"];?>,
@@ -111,6 +112,8 @@ jQuery(window).load(function(){
 				.animate({opacity:1}, animateSpeed );
 	    }
     });
+
+    
 
 	$("div.slideshow").hover(
 		function(){

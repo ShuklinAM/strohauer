@@ -29,13 +29,13 @@
 			<action method="addCss"><stylesheet>css/local.css</stylesheet></action>
 			<action method="addCss"><stylesheet>css/cloud-zoom.css</stylesheet></action>
 			<action method="addCss"><stylesheet>css/animation.css</stylesheet></action>
-
             <action method="addItem"><type>js</type><name>codevog/html5shiv.js</name><params/><if>lt IE 9</if></action>
 			<!--<action method="addJs"><script>codevog/jquery-1.7.2.min.js</script></action>-->
 			<action method="addJs"><script>codevog/jquery.hoverIntent.min.js</script></action>
 			<action method="addItem"><type>skin_js</type><script>js/script.js</script></action>
+            <action method="addItem"><type>skin_js</type><script>js/classie.js</script></action>
             <!--<action method="addItem"><type>skin_js</type><script>js/custom_select.js</script></action>-->
-
+	     <action method="addItem"><type>skin_js</type><script>js/totop.js</script></action>
             <action method="addCss">
                 <path>css/ism/ism.customInputs.css</path>
             </action>
@@ -79,11 +79,16 @@
                 <type>skin_js</type>
                 <path>js/jquery.placeholder.min.js</path>
             </action>
+            <action method="addCss"><stylesheet>css/mobmenu.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/responsive.css</stylesheet></action>
 
+            <action method="addItem"><type>skin_js</type><script>js/flexmenu.min.js</script></action>
 
 		</reference>
 
-		<!-- add currency and cart block in header -->
+
+
+     		<!-- add currency and cart block in header -->
 		<reference name="header">
             <block type="cms/block" name="template_logo" as="templateLogo">
                 <action method="setBlockId"><block_id>template_logo</block_id></action>
@@ -178,7 +183,16 @@
 			<action method="unsetChild"><alias>catalog.leftnav</alias></action>
 			<action method="insert"><blockName>catalog.leftnav</blockName><sublingName></sublingName><after>0</after></action>
 		</reference>
+
 	</catalog_category_layered>
+
+
+    <catalog_category_view>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/responsive-catalog.css</stylesheet></action>
+        </reference>
+    </catalog_category_view>
+
 
 	<catalogsearch_result_index translate="label">
 		<reference name="root">
@@ -221,6 +235,7 @@
 
         <reference name="head">
             <action method="addJs"><script>codevog/cloud-zoom.1.0.2.min.js</script></action>
+            <action method="addCss"><stylesheet>css/responsive-detail.css</stylesheet></action>
         </reference>
 
 		<reference name="right">
@@ -254,6 +269,24 @@
 
 	</catalog_product_view>
 
+    <checkout_cart_index translate="label">
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/responsive-ccart.css</stylesheet></action>
+        </reference>
+    </checkout_cart_index>
+
+    <checkout_onepage_index translate="label">
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/responsive-conepage.css</stylesheet></action>
+        </reference>
+    </checkout_onepage_index>
+
+    <customer_account translate="label">
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/responsive-account.css</stylesheet></action>
+        </reference>
+    </customer_account>
+
 	<reviews>
 	    <reference name="root">
 	        <action method="setTemplate"><template>page/1column.phtml</template></action>
@@ -271,5 +304,7 @@
             <action method="addJs"><script>codevog/cloud-zoom.1.0.2.min.js</script></action>
         </reference>
 	</review_product_list>
+
+
 
 </layout>
