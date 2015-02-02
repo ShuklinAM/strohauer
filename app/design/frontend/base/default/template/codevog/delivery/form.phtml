@@ -11,9 +11,9 @@
         <p style="font-size:14; color:#FF0000; font-weight:bold" ><?php echo $this->__('Um den Wunschtermin zu wählen, klicken Sie in das Datumsfeld!');?></p>
     </div>
     <div><br /><br /></div>
-    <div><?php echo Mage::helper('codevog_delivery')->__("Wunschtermin:");?></div>
+    <div class="required"><?php echo Mage::helper('codevog_delivery')->__("Wunschtermin:");?><em>*</em></div>
     <input type="hidden" class="inputDateUser">
-    <input readonly="readonly" class="inputClass" type="text" value="<?php echo $this->get_minimal_date();?>" id="<?php echo $this->getFieldId('customer_notes')?>" name="<?php echo $this->getFieldName('customer_notes')?>" <?php echo $this->getFieldParams() ?>>
+    <input readonly="readonly" class="inputClass required-entry" type="text" value="<?php echo $this->get_minimal_date();?>" id="<?php echo $this->getFieldId('customer_notes')?>" name="<?php echo $this->getFieldName('customer_notes')?>" <?php echo $this->getFieldParams() ?>>
     <a href="#" onclick="if(jQuery('#DateUser').is(':hidden')) jQuery('#DateUser').show(); else jQuery('#DateUser').hide(); return false;">
         <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'codevog/delivery/cal-icon.png';?>" width="20px" height="20px" />
     </a>
