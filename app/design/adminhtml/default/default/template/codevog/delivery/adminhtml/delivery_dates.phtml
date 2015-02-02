@@ -1,0 +1,80 @@
+<div class="dates_content">
+   <!-- <div><input type="button" value="Change holidays" onclick="show_calendar();"></div>-->
+    <div id="change_block">
+       <div id="codevog-calendar"></div>
+<div class="button small left" style="margin-top:150px;"><a class="button black sendData" href="#">Send Data</a></div> 
+ 
+    </div>
+    <?php $holidays = $this->get_holidays();?>
+ <!--  <div class="date_list">
+        <?php foreach($holidays as $holiday) {?>
+                <div class="date_elem"><?php echo $holiday->getDate()?></div>
+                <div class="date_delete"><input type="button" value="delete" onclick="delete_date(<?php echo $holiday->getId()?>,'<?php echo $this->getUrl('/delivery/deletedate') ?>');get_dates_without(<?php echo $holiday->getId()?>,'<?php echo $this->getUrl('/delivery/getdateswithout') ?>');"></div>
+       <?php }?>
+   </div>-->
+ <div id="result_change"></div>
+</div>
+
+
+
+<script type="text/javascript">
+jQuery.noConflict();
+ 
+ <?php foreach($holidays as $holiday) { 
+                       $output .= 'new Date("'.$holiday->getDate().'"),';
+                        }
+                        $output = substr($output,0, strlen($output) - 1);
+                        ?>
+ 
+ 
+var dataHoliday = [<?echo $output;?>],
+    $this = jQuery('#codevog-calendar');
+ 
+
+ 
+
+ 
+ //Init Admin DataPicker
+$this.DatePicker({
+  mode: 'multiple',
+  inline: true, 
+  calendars: 5,
+  date: dataHoliday
+  });
+  
+   
+jQuery('.sendData').bind('click', function(e){
+	var dataCalendar = $this.DatePickerGetDate(); 
+	sendData(dataCalendar);
+	e.preventDefault();
+ });
+
+
+jQuery('.clear').bind('click', function(e){
+	DatePickerClear();
+	e.preventDefault();
+ });
+	 
+	
+	
+function sendData(dataCalendar) { 
+
+    var reloadurl = '<?php echo $this->getUrl('/delivery/savedates') ?>';
+
+    new Ajax.Request(reloadurl, {
+    method: 'post',
+    parameters: { calendar:  JSON.stringify(dataCalendar) },
+    onComplete: function(data) {
+       jQuery("#result_change").html('Changes submitted');
+       setTimeout("jQuery(\"#result_change\").html('')", 3000);
+      // jQuery("#change_block").hide();
+       //delete_date(0,'<?php echo $this->getUrl('/delivery/deletedate') ?>');
+       
+    }
+    });
+   
+ //console.log(dataCalendar);
+
+} 
+	 
+</script>

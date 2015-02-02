@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<config>
+        <menu>
+            <sales>
+                <children>
+            <codevog_delivery>
+            <title>Delivery Date Options</title>
+            <sort_order>377</sort_order>
+                <children>
+                    <days>
+                        <title>Set weekends</title>
+                        <sort_order>0</sort_order>
+                        <action>adminhtml/delivery/days</action>
+                    </days>
+                    <dates>
+                        <title>Set holidays</title>
+                        <sort_order>1</sort_order>
+                        <action>adminhtml/delivery/dates</action>
+                    </dates>
+                    <minimumdays>
+                        <title>Set minimum days</title>
+                        <sort_order>2</sort_order>
+                        <action>adminhtml/delivery/minimumdays</action>
+                    </minimumdays>
+                </children>
+            </codevog_delivery>
+            </children>
+            </sales>
+        </menu>
+        <acl>
+            <resources>
+                <admin>
+                <children>
+                   <sales>
+                        <children>
+                       <codevog_delivery>
+                    <title>Delivery Dates</title>
+                    <sort_order>377</sort_order>
+                        <children>
+                            <days>
+                        <title>Set weekends</title>
+                        <sort_order>0</sort_order>
+                        <action>adminhtml/delivery/days</action>
+                    </days>
+                    <dates>
+                        <title>Set holidays</title>
+                        <sort_order>1</sort_order>
+                        <action>adminhtml/delivery/dates</action>
+                    </dates>
+                    <minimumdays>
+                        <title>Set minimum days</title>
+                        <sort_order>2</sort_order>
+                        <action>adminhtml/delivery/minimumdays</action>
+                    </minimumdays>
+                        </children>
+                        </codevog_delivery>
+                         </children>
+                    </sales>
+                </children>
+                </admin>
+            </resources>
+        </acl> 
+</config>
