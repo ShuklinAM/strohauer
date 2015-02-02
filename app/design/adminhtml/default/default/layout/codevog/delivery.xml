@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<layout version="0.4.6">
+    <adminhtml_delivery_days>
+        <reference name="content">
+            <block type="codevog_delivery/adminhtml_days" name="days.grid_container" />
+        </reference>
+    </adminhtml_delivery_days>
+    <adminhtml_delivery_dates>
+        <reference name="head">
+        <action method="addCss">
+            <path>css/delivery/delivery.css</path>
+        </action>
+         <action method="addCss">
+            <path>css/delivery/clean.css</path>
+        </action>
+         <action method="addCss">
+            <path>css/delivery/base.css</path>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <path>js/jquery-1.7.2.min.js</path>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <path>js/delivery/delivery.js</path>
+        </action>
+         <action method="addItem">
+            <type>skin_js</type>
+            <path>js/delivery/datepicker.js</path>
+        </action>
+        </reference>
+        <reference name="content">
+            <block type="codevog_delivery/adminhtml_dates" name="dates.grid_container" template="codevog/delivery/adminhtml/delivery_dates.phtml"/>
+        </reference>
+    </adminhtml_delivery_dates>
+    <adminhtml_delivery_minimumdays>
+        <reference name="content">
+            <block type="codevog_delivery/adminhtml_minimumdays" name="minimumdays.grid_container" />
+        </reference>
+    </adminhtml_delivery_minimumdays>
+    
+    
+    <adminhtml_delivery_editminimumdays>
+         <reference name="content">
+            <block type="codevog_delivery/adminhtml_editminimumdays" name="editminimumdays.grid_edit" />
+        </reference>
+    </adminhtml_delivery_editminimumdays>
+     <adminhtml_delivery_editdays>
+         <reference name="content">
+            <block type="codevog_delivery/adminhtml_editdays" name="editdays.grid_edit" />
+        </reference>
+    </adminhtml_delivery_editdays>
+     <adminhtml_sales_order_view>
+         <reference name="content">
+             <block after="order_history" type="codevog_delivery/adminhtml_deliveryview" name="delivery.view" template="codevog/delivery/adminhtml/deliveryview.phtml"/>
+         </reference>
+     </adminhtml_sales_order_view>
+</layout>

@@ -1,0 +1,24 @@
+<?php  if($this->displayDeliveryDate()): ?>
+<div class="box-left">
+    <!--Billing Address-->
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-payment-method"><?php echo $this->helper('codevog_delivery')->__('Wunschtermin') ?></h4>
+        </div>
+        <fieldset>
+            <?php echo $this->get_Deliverydate();?>
+         </fieldset>
+    </div>
+</div>
+<div class="box-right">
+    <!--Billing Address-->
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-payment-method"><?php echo $this->helper('codevog_delivery')->__('Kundennachricht') ?></h4>
+        </div>
+         <fieldset>
+            <?php echo $this->get_Deliverycomment();?>
+         </fieldset>
+    </div>
+</div>
+<?php endif;?>
